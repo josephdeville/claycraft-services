@@ -1,22 +1,51 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Workflow, Database, PlugZap } from "lucide-react";
+import { Bot, Boxes, Signal, Wrench } from "lucide-react";
 
 const Services = () => {
   const items = [
     {
-      icon: Workflow,
-      title: "Clay automation & workflows",
-      desc: "Custom Clay canvases and sequences that scale reliably with monitoring, error handling, and performance tuning.",
+      icon: Bot,
+      title: "AI Agent Creation",
+      desc:
+        "Design and build production‑ready AI agents for GTM—research, enrichment, outreach, and ops.",
+      bullets: [
+        "Agent architecture with guardrails, evals, and monitoring",
+        "Tooling integrations (CRMs, SEPs, data providers, calendars)",
+        "Human‑in‑the‑loop reviews and safety controls",
+      ],
     },
     {
-      icon: Database,
-      title: "Data enrichment & routing",
-      desc: "Multi-source enrichment, deduplication, scoring, and lead routing across your CRM and GTM tools.",
+      icon: Boxes,
+      title: "Tech Stack Implementation",
+      desc:
+        "Stand up the right stack and wire it together so data and workflows flow end‑to‑end.",
+      bullets: [
+        "Select and implement LLM, vector, and orchestration layers",
+        "Secure infra, secrets, and environments with observability",
+        "Event pipelines and webhooks with idempotency",
+      ],
     },
     {
-      icon: PlugZap,
-      title: "GTM tooling & integrations",
-      desc: "Bi-directional integrations with HubSpot, Salesforce, Outreach, Apollo, webhooks, and custom APIs.",
+      icon: Signal,
+      title: "Signal Stacking",
+      desc:
+        "Aggregate buying signals to prioritize and trigger outreach that converts.",
+      bullets: [
+        "Multi‑source intent, product usage, and firmographic signals",
+        "Scoring models and routing to reps and sequences",
+        "Real‑time alerts and dashboards",
+      ],
+    },
+    {
+      icon: Wrench,
+      title: "CRM Optimization",
+      desc:
+        "Fix the data model, automation, and UX so reps get speed and accuracy.",
+      bullets: [
+        "Identity resolution, dedupe, and enrichment loops",
+        "Assignment, SLAs, and lifecycle automation",
+        "Reporting, hygiene checks, and governance",
+      ],
     },
   ];
 
@@ -30,7 +59,7 @@ const Services = () => {
           </p>
         </header>
         <div className="grid gap-6 md:grid-cols-3">
-          {items.map(({ icon: Icon, title, desc }) => (
+          {items.map(({ icon: Icon, title, desc, bullets }) => (
             <Card key={title} className="group transition-transform duration-200 hover:-translate-y-0.5">
               <CardHeader>
                 <div className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-secondary text-foreground ring-1 ring-border">
@@ -41,27 +70,9 @@ const Services = () => {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-2">
-                  {title.includes("Clay") && (
-                    <>
-                      <li>Canvas design, scaling, and run‑time optimization</li>
-                      <li>Quality checks, retries, and alerting</li>
-                      <li>Cost controls and run visibility</li>
-                    </>
-                  )}
-                  {title.includes("enrichment") && (
-                    <>
-                      <li>Identity resolution and deduplication</li>
-                      <li>Lead scoring models and prioritization</li>
-                      <li>HubSpot/Salesforce assignment logic</li>
-                    </>
-                  )}
-                  {title.includes("integrations") && (
-                    <>
-                      <li>Secure webhooks and middleware</li>
-                      <li>Robust syncs with idempotency</li>
-                      <li>Custom API connectors</li>
-                    </>
-                  )}
+                  {bullets?.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
