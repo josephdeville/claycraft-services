@@ -3,27 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Play, CheckCircle } from "lucide-react";
 import { useState } from "react";
-
 const Hero = () => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // For now, use mailto - can be replaced with Supabase later
     window.location.href = `mailto:hello@yourdomain.com?subject=GTM%20Automation%20Interest&body=Hi,%0D%0A%0D%0AFirst%20Name:%20${firstName}%0D%0AEmail:%20${email}%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20GTM%20automation%20and%20Clay%20workflows.`;
   };
-
-  return (
-    <section className="relative min-h-screen bg-gradient-to-b from-background to-background/95">
+  return <section className="relative min-h-screen bg-gradient-to-b from-background to-background/95">
       <div className="container mx-auto px-6 py-8">
         {/* Top Navigation */}
         <nav className="flex items-center justify-between mb-8">
-          <div className="flex items-center space-x-4">
-            <Badge variant="secondary" className="text-xs">Step 1 of 3</Badge>
-            <span className="text-sm text-muted-foreground">•</span>
-            <span className="text-sm text-muted-foreground">Free Strategy Session</span>
-          </div>
+          
           <Badge className="bg-orange-500 text-white hover:bg-orange-600">
             🔥 FREE STRATEGY SESSION 🔥
           </Badge>
@@ -84,22 +76,8 @@ const Hero = () => {
           {/* Email Capture Form */}
           <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
             <div className="grid grid-cols-2 gap-3">
-              <Input
-                type="text"
-                placeholder="First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-                className="bg-background"
-              />
-              <Input
-                type="email"
-                placeholder="Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-background"
-              />
+              <Input type="text" placeholder="First Name" value={firstName} onChange={e => setFirstName(e.target.value)} required className="bg-background" />
+              <Input type="email" placeholder="Email Address" value={email} onChange={e => setEmail(e.target.value)} required className="bg-background" />
             </div>
             
             <Button type="submit" variant="hero" className="w-full h-12 text-base font-semibold">
@@ -135,8 +113,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
