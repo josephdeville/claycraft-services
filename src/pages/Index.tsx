@@ -1,6 +1,9 @@
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { DollarSign, TrendingUp, Target, Zap } from "lucide-react";
 
 const Index = () => {
   const jsonLd = {
@@ -13,28 +16,60 @@ const Index = () => {
     url: '/',
   };
 
+  const features = [
+    {
+      icon: DollarSign,
+      title: "The $500K 'Revenue Engine'",
+      description: "The exact automation stack that generated our first $500K in pipeline and how you can replicate it"
+    },
+    {
+      icon: TrendingUp,
+      title: "90-Day GTM Framework", 
+      description: "Step-by-step system to go from manual processes to automated growth engine in 90 days"
+    },
+    {
+      icon: Target,
+      title: "Lead Generation Method",
+      description: "Our personal method for generating 500+ qualified leads per month on autopilot"
+    },
+    {
+      icon: Zap,
+      title: "Clay Automation Hack",
+      description: "How to build scalable data enrichment workflows that turn prospects into customers"
+    }
+  ];
+
   return (
     <main>
       <Hero />
-      <Services />
-      <Process />
-
-      <section id="contact" className="py-16 md:py-24">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Let’s build your GTM engine</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            Tell us about your goals and stack. We’ll propose a pragmatic path to value in under 48 hours.
-          </p>
-          <div className="flex justify-center">
-            <a
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md px-8 text-base font-medium bg-gradient-brand text-brand-foreground shadow-glow hover:shadow-glow-strong transition"
-              href="mailto:hello@yourdomain.com?subject=Project%20Inquiry%20-%20Clay%20%26%20GTM"
-            >
-              Contact us
-            </a>
+      
+      {/* What You'll Discover Section */}
+      <section className="py-16 md:py-24 bg-card/50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+              What You'll Discover in This Strategy Session:
+            </h2>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+            {features.map(({ icon: Icon, title, description }) => (
+              <Card key={title} className="text-center p-6">
+                <CardContent className="space-y-4 p-0">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 mx-auto">
+                    <Icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="font-semibold text-lg">{title}</h3>
+                  <p className="text-muted-foreground text-sm">{description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
+
+      <Services />
+      <Process />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </main>
