@@ -18,11 +18,6 @@ const Index = () => {
 
   const features = [
     {
-      icon: DollarSign,
-      title: "The $500K 'Revenue Engine'",
-      description: "The exact automation stack that generated our first $500K in pipeline and how you can replicate it"
-    },
-    {
       icon: TrendingUp,
       title: "90-Day GTM Framework", 
       description: "Step-by-step system to go from manual processes to automated growth engine in 90 days"
@@ -34,7 +29,7 @@ const Index = () => {
     },
     {
       icon: Zap,
-      title: "Clay Automation Hack",
+      title: "Clay Signal Stacking and Insights",
       description: "How to build scalable data enrichment workflows that turn prospects into customers"
     }
   ];
