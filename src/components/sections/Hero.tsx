@@ -3,19 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Play, CheckCircle } from "lucide-react";
 import { useState } from "react";
-
 const Hero = () => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // For now, use mailto - can be replaced with Supabase later
     window.location.href = `mailto:hello@yourdomain.com?subject=GTM%20Automation%20Interest&body=Hi,%0D%0A%0D%0AFirst%20Name:%20${firstName}%0D%0AEmail:%20${email}%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20GTM%20automation%20and%20Clay%20workflows.`;
   };
-
-  return (
-    <section className="relative min-h-screen bg-gradient-to-b from-background to-background/95">
+  return <section className="relative min-h-screen bg-gradient-to-b from-background to-background/95">
       <div className="container mx-auto px-6 py-8">
         {/* Top Navigation */}
         <nav className="flex items-center justify-between mb-8">
@@ -31,11 +27,7 @@ const Hero = () => {
 
         {/* Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            How We Built A{" "}
-            <span className="text-red-500">$2M ARR</span> GTM Engine With{" "}
-            <span className="bg-gradient-brand bg-clip-text text-transparent">Clay + Automation</span>
-          </h1>
+          
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             The exact 90-day system we used to transform manual processes into a revenue-generating machine
@@ -84,22 +76,8 @@ const Hero = () => {
           {/* Email Capture Form */}
           <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
             <div className="grid grid-cols-2 gap-3">
-              <Input
-                type="text"
-                placeholder="First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-                className="bg-background"
-              />
-              <Input
-                type="email"
-                placeholder="Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-background"
-              />
+              <Input type="text" placeholder="First Name" value={firstName} onChange={e => setFirstName(e.target.value)} required className="bg-background" />
+              <Input type="email" placeholder="Email Address" value={email} onChange={e => setEmail(e.target.value)} required className="bg-background" />
             </div>
             
             <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white h-12 text-base font-semibold">
@@ -135,8 +113,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
