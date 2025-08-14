@@ -32,9 +32,9 @@ const Hero = () => {
         {/* Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            How We Built A{" "}
-            <span className="text-red-500">$2M ARR</span> GTM Engine With{" "}
-            <span className="bg-gradient-brand bg-clip-text text-transparent">Clay + Automation</span>
+            Solo GTM Engineer Building{" "}
+            <span className="text-red-500">$2M ARR</span> Revenue Engines With{" "}
+            <span className="bg-gradient-brand bg-clip-text text-transparent">Clay + Technical Automation</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
