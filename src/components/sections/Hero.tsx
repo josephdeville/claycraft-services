@@ -32,13 +32,13 @@ const Hero = () => {
         {/* Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            GTM Engineer Building{" "}
-            <span className="text-red-500">Revenue Engines</span> With{" "}
-            <span className="bg-gradient-brand bg-clip-text text-transparent">Clay + Technical Automation</span>
+            Scale Your Business with{" "}
+            <span className="text-orange-500">Clay Automation</span>{" "}
+            <span className="bg-gradient-brand bg-clip-text text-transparent">& Data Intelligence</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            The exact 90-day system we used to transform manual processes into a revenue-generating machine
+            Transform your lead generation with AI-powered Clay workflows that deliver 500+ qualified prospects monthly on autopilot
           </p>
 
           {/* Video/Case Study Section */}
@@ -102,8 +102,8 @@ const Hero = () => {
               />
             </div>
             
-            <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white h-12 text-base font-semibold">
-              Get FREE Strategy Session →
+            <Button type="submit" variant="hero" className="w-full h-12 text-base font-semibold">
+              Book Your Clay Automation Audit →
             </Button>
             
             <div className="space-y-2 text-sm text-muted-foreground">
