@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
+import ToolsSection from "@/components/sections/ToolsSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DollarSign, TrendingUp, Target, Zap } from "lucide-react";
@@ -64,6 +65,7 @@ const Index = () => {
         </div>
       </section>
 
+      <ToolsSection />
       <Testimonials />
       <Services />
       <Process />
