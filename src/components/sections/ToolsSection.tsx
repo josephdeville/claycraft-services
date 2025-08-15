@@ -3,32 +3,82 @@ const ToolsSection = () => {
     {
       name: "Clay",
       description: "Data enrichment & automation",
-      logo: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%23FF6B35'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='14' font-weight='bold'%3EClay%3C/text%3E%3C/svg%3E"
+      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/clay.svg"
     },
     {
       name: "Smartlead",
       description: "Email outreach & sequences", 
-      logo: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%234F46E5'/%3E%3Ctext x='50' y='45' text-anchor='middle' fill='white' font-size='10' font-weight='bold'%3ESmart%3C/text%3E%3Ctext x='50' y='58' text-anchor='middle' fill='white' font-size='10' font-weight='bold'%3ELead%3C/text%3E%3C/svg%3E"
+      logo: "https://smartlead.ai/favicon.ico"
     },
     {
       name: "Apollo",
       description: "Sales intelligence & CRM",
-      logo: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%2310B981'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EApollo%3C/text%3E%3C/svg%3E"
+      logo: "https://apollo.io/favicon.ico"
     },
     {
       name: "HubSpot",
       description: "Marketing automation & CRM",
-      logo: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%23FF7A59'/%3E%3Ctext x='50' y='45' text-anchor='middle' fill='white' font-size='10' font-weight='bold'%3EHub%3C/text%3E%3Ctext x='50' y='58' text-anchor='middle' fill='white' font-size='10' font-weight='bold'%3ESpot%3C/text%3E%3C/svg%3E"
+      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/hubspot.svg"
     },
     {
       name: "Zapier",
       description: "Workflow automation",
-      logo: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%23FF4A00'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EZapier%3C/text%3E%3C/svg%3E"
+      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/zapier.svg"
     },
     {
       name: "Outreach",
       description: "Sales engagement platform",
-      logo: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%236366F1'/%3E%3Ctext x='50' y='45' text-anchor='middle' fill='white' font-size='8' font-weight='bold'%3EOut%3C/text%3E%3Ctext x='50' y='58' text-anchor='middle' fill='white' font-size='8' font-weight='bold'%3EReach%3C/text%3E%3C/svg%3E"
+      logo: "https://outreach.io/favicon.ico"
+    },
+    {
+      name: "Cursor",
+      description: "AI-powered code editor",
+      logo: "https://cursor.sh/favicon.ico"
+    },
+    {
+      name: "Apify",
+      description: "Web scraping & automation",
+      logo: "https://apify.com/favicon.ico"
+    },
+    {
+      name: "Common Room",
+      description: "Community intelligence",
+      logo: "https://commonroom.io/favicon.ico"
+    },
+    {
+      name: "Netlify",
+      description: "Web deployment & hosting",
+      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/netlify.svg"
+    },
+    {
+      name: "Lovable",
+      description: "AI web development",
+      logo: "https://lovable.dev/favicon.ico"
+    },
+    {
+      name: "Replit",
+      description: "Online IDE & hosting",
+      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/replit.svg"
+    },
+    {
+      name: "n8n",
+      description: "Workflow automation",
+      logo: "https://n8n.io/favicon.ico"
+    },
+    {
+      name: "Ocean.io",
+      description: "B2B lead generation",
+      logo: "https://ocean.io/favicon.ico"
+    },
+    {
+      name: "Pocus",
+      description: "Product-led sales",
+      logo: "https://pocus.com/favicon.ico"
+    },
+    {
+      name: "Eleven Labs",
+      description: "AI voice generation",
+      logo: "https://elevenlabs.io/favicon.ico"
     }
   ];
 
