@@ -1,0 +1,19 @@
+{
+  "name": "Clay & GTM Engineering Services",
+  "short_name": "Clay GTM",
+  "description": "Clay automation, data enrichment, lead routing, and GTM tooling. High-impact workflows engineered for growth.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f23",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en"
+}

@@ -2,21 +2,44 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Play, CheckCircle } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+
 const Hero = () => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const { elementRef, isIntersecting } = useIntersectionObserver({
+    threshold: 0.1,
+    triggerOnce: true
+  });
+
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, use mailto - can be replaced with Supabase later
-    window.location.href = `mailto:hello@yourdomain.com?subject=GTM%20Automation%20Interest&body=Hi,%0D%0A%0D%0AFirst%20Name:%20${firstName}%0D%0AEmail:%20${email}%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20GTM%20automation%20and%20Clay%20workflows.`;
-  };
-  return <section className="relative min-h-screen bg-gradient-to-b from-background to-background/95">
+    setIsSubmitting(true);
+    
+    try {
+      // For now, use mailto - can be replaced with Supabase later
+      window.location.href = `mailto:hello@yourdomain.com?subject=GTM%20Automation%20Interest&body=Hi,%0D%0A%0D%0AFirst%20Name:%20${firstName}%0D%0AEmail:%20${email}%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20GTM%20automation%20and%20Clay%20workflows.`;
+    } catch (error) {
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [firstName, email]);
+
+  return (
+    <section 
+      ref={elementRef}
+      className={`relative min-h-screen bg-gradient-to-b from-background to-background/95 transition-all duration-1000 ${
+        isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="container mx-auto px-6 py-8">
         {/* Top Navigation */}
         <nav className="flex items-center justify-between mb-8">
-          
-          <Badge className="bg-orange-500 text-white hover:bg-orange-600">
+          <Badge className="bg-orange-500 text-white hover:bg-orange-600 transition-colors duration-200">
             🔥 FREE STRATEGY SESSION 🔥
           </Badge>
         </nav>
@@ -34,13 +57,13 @@ const Hero = () => {
           </p>
 
           {/* Video/Case Study Section */}
-          <div className="bg-card border rounded-lg p-8 max-w-2xl mx-auto">
+          <div className="bg-card border rounded-lg p-8 max-w-2xl mx-auto hover:shadow-lg transition-shadow duration-300">
             <div className="space-y-4">
               <Badge variant="destructive" className="bg-red-500">
                 🔴 LIVE CASE STUDY
               </Badge>
               
-              <div className="relative bg-gradient-to-br from-orange-400 to-orange-600 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+              <div className="relative bg-gradient-to-br from-orange-400 to-orange-600 rounded-full w-24 h-24 mx-auto flex items-center justify-center hover:scale-105 transition-transform duration-200">
                 <Play className="w-8 h-8 text-white ml-1" />
               </div>
               
@@ -76,12 +99,31 @@ const Hero = () => {
           {/* Email Capture Form */}
           <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
             <div className="grid grid-cols-2 gap-3">
-              <Input type="text" placeholder="First Name" value={firstName} onChange={e => setFirstName(e.target.value)} required className="bg-background" />
-              <Input type="email" placeholder="Email Address" value={email} onChange={e => setEmail(e.target.value)} required className="bg-background" />
+              <Input 
+                type="text" 
+                placeholder="First Name" 
+                value={firstName} 
+                onChange={e => setFirstName(e.target.value)} 
+                required 
+                className="bg-background transition-colors duration-200 focus:ring-2 focus:ring-orange-500" 
+              />
+              <Input 
+                type="email" 
+                placeholder="Email Address" 
+                value={email} 
+                onChange={e => setEmail(e.target.value)} 
+                required 
+                className="bg-background transition-colors duration-200 focus:ring-2 focus:ring-orange-500" 
+              />
             </div>
             
-            <Button type="submit" variant="hero" className="w-full h-12 text-base font-semibold">
-              Book Your Clay Automation Audit →
+            <Button 
+              type="submit" 
+              variant="hero" 
+              className="w-full h-12 text-base font-semibold transition-all duration-200 hover:scale-105"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Submitting...' : 'Book Your Clay Automation Audit →'}
             </Button>
             
             <div className="space-y-2 text-sm text-muted-foreground">
@@ -102,7 +144,7 @@ const Hero = () => {
           </form>
 
           {/* Social Proof */}
-          <div className="bg-card border rounded-lg p-4 max-w-md mx-auto">
+          <div className="bg-card border rounded-lg p-4 max-w-md mx-auto hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center justify-between">
               <Badge variant="destructive">LIVE</Badge>
               <div className="text-right">
@@ -113,6 +155,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

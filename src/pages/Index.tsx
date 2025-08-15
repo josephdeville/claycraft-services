@@ -1,14 +1,18 @@
-import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
-import Process from "@/components/sections/Process";
-import Testimonials from "@/components/sections/Testimonials";
-import ToolsSection from "@/components/sections/ToolsSection";
+import { lazy, Suspense, useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DollarSign, TrendingUp, Target, Zap } from "lucide-react";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
+
+// Lazy load sections for better performance
+const Hero = lazy(() => import("@/components/sections/Hero"));
+const Services = lazy(() => import("@/components/sections/Services"));
+const Process = lazy(() => import("@/components/sections/Process"));
+const Testimonials = lazy(() => import("@/components/sections/Testimonials"));
+const ToolsSection = lazy(() => import("@/components/sections/ToolsSection"));
 
 const Index = () => {
-  const jsonLd = {
+  const jsonLd = useMemo(() => ({
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'Clay & GTM Engineering Services',
@@ -16,9 +20,9 @@ const Index = () => {
       'Clay automation, data enrichment, lead routing, and GTM tooling. High-impact workflows engineered for growth.',
     areaServed: 'Global',
     url: '/',
-  };
+  }), []);
 
-  const features = [
+  const features = useMemo(() => [
     {
       icon: TrendingUp,
       title: "90-Day GTM Framework", 
@@ -34,11 +38,13 @@ const Index = () => {
       title: "Clay Signal Stacking and Insights",
       description: "How to build scalable data enrichment workflows that turn prospects into customers"
     }
-  ];
+  ], []);
 
   return (
     <main>
-      <Hero />
+      <Suspense fallback={<LoadingSpinner />}>
+        <Hero />
+      </Suspense>
       
       {/* What You'll Discover Section */}
       <section className="py-16 md:py-24 bg-card/50">
@@ -51,7 +57,7 @@ const Index = () => {
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
             {features.map(({ icon: Icon, title, description }) => (
-              <Card key={title} className="text-center p-6">
+              <Card key={title} className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <CardContent className="space-y-4 p-0">
                   <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 mx-auto">
                     <Icon className="h-8 w-8" />
@@ -65,10 +71,21 @@ const Index = () => {
         </div>
       </section>
 
-      <ToolsSection />
-      <Testimonials />
-      <Services />
-      <Process />
+      <Suspense fallback={<LoadingSpinner />}>
+        <ToolsSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <Testimonials />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <Services />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <Process />
+      </Suspense>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </main>
