@@ -79,6 +79,16 @@ const ToolsSection = () => {
       name: "Eleven Labs",
       description: "AI voice generation",
       logo: "https://elevenlabs.io/favicon.ico"
+    },
+    {
+      name: "Pipl",
+      description: "People search & identity resolution",
+      logo: "https://pipl.com/favicon.ico"
+    },
+    {
+      name: "Exa",
+      description: "AI-powered search API",
+      logo: "https://exa.ai/favicon.ico"
     }
   ];
 
