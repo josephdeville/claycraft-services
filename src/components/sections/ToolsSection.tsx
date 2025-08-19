@@ -81,9 +81,9 @@ const ToolsSection = () => {
       logo: "https://elevenlabs.io/favicon.ico"
     },
     {
-      name: "Pipl",
+      name: "Plusvibe",
       description: "People search & identity resolution",
-      logo: "https://pipl.com/favicon.ico"
+      logo: "https://plusvibe.com/favicon.ico"
     },
     {
       name: "Exa",
