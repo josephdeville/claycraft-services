@@ -1,94 +1,113 @@
+import clayLogo from "@/assets/logos/clay.png";
+import smartleadLogo from "@/assets/logos/smartlead.png";
+import apolloLogo from "@/assets/logos/apollo.png";
+import hubspotLogo from "@/assets/logos/hubspot.svg";
+import zapierLogo from "@/assets/logos/zapier.svg";
+import outreachLogo from "@/assets/logos/outreach.png";
+import cursorLogo from "@/assets/logos/cursor.png";
+import apifyLogo from "@/assets/logos/apify.png";
+import commonroomLogo from "@/assets/logos/commonroom.png";
+import netlifyLogo from "@/assets/logos/netlify.svg";
+import lovableLogo from "@/assets/logos/lovable.png";
+import replitLogo from "@/assets/logos/replit.svg";
+import n8nLogo from "@/assets/logos/n8n.png";
+import oceanLogo from "@/assets/logos/ocean.png";
+import pocusLogo from "@/assets/logos/pocus.png";
+import elevenlabsLogo from "@/assets/logos/elevenlabs.png";
+import plusvibeLogo from "@/assets/logos/plusvibe.png";
+import exaLogo from "@/assets/logos/exa.png";
+
 const ToolsSection = () => {
   const tools = [
     {
       name: "Clay",
       description: "Data enrichment & automation",
-      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/clay.svg"
+      logo: clayLogo
     },
     {
       name: "Smartlead",
       description: "Email outreach & sequences", 
-      logo: "https://smartlead.ai/favicon.ico"
+      logo: smartleadLogo
     },
     {
       name: "Apollo",
       description: "Sales intelligence & CRM",
-      logo: "https://apollo.io/favicon.ico"
+      logo: apolloLogo
     },
     {
       name: "HubSpot",
       description: "Marketing automation & CRM",
-      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/hubspot.svg"
+      logo: hubspotLogo
     },
     {
       name: "Zapier",
       description: "Workflow automation",
-      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/zapier.svg"
+      logo: zapierLogo
     },
     {
       name: "Outreach",
       description: "Sales engagement platform",
-      logo: "https://outreach.io/favicon.ico"
+      logo: outreachLogo
     },
     {
       name: "Cursor",
       description: "AI-powered code editor",
-      logo: "https://cursor.sh/favicon.ico"
+      logo: cursorLogo
     },
     {
       name: "Apify",
       description: "Web scraping & automation",
-      logo: "https://apify.com/favicon.ico"
+      logo: apifyLogo
     },
     {
       name: "Common Room",
       description: "Community intelligence",
-      logo: "https://commonroom.io/favicon.ico"
+      logo: commonroomLogo
     },
     {
       name: "Netlify",
       description: "Web deployment & hosting",
-      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/netlify.svg"
+      logo: netlifyLogo
     },
     {
       name: "Lovable",
       description: "AI web development",
-      logo: "https://lovable.dev/favicon.ico"
+      logo: lovableLogo
     },
     {
       name: "Replit",
       description: "Online IDE & hosting",
-      logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/replit.svg"
+      logo: replitLogo
     },
     {
       name: "n8n",
       description: "Workflow automation",
-      logo: "https://n8n.io/favicon.ico"
+      logo: n8nLogo
     },
     {
       name: "Ocean.io",
       description: "B2B lead generation",
-      logo: "https://ocean.io/favicon.ico"
+      logo: oceanLogo
     },
     {
       name: "Pocus",
       description: "Product-led sales",
-      logo: "https://pocus.com/favicon.ico"
+      logo: pocusLogo
     },
     {
       name: "Eleven Labs",
       description: "AI voice generation",
-      logo: "https://elevenlabs.io/favicon.ico"
+      logo: elevenlabsLogo
     },
     {
       name: "Plusvibe",
       description: "People search & identity resolution",
-      logo: "https://plusvibe.com/favicon.ico"
+      logo: plusvibeLogo
     },
     {
       name: "Exa",
       description: "AI-powered search API",
-      logo: "https://exa.ai/favicon.ico"
+      logo: exaLogo
     }
   ];
 
