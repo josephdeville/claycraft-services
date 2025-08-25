@@ -12,17 +12,17 @@ const ClayClassroom = () => {
       duration: "5 days",
       level: "Beginner",
       format: "Live + Recorded",
-      price: "$497",
+      price: "$499",
       features: ["Live daily sessions", "Hands-on projects", "Template library access", "Community support"]
     },
     {
       icon: Zap,
-      title: "Advanced Clay Workflows",
-      description: "Build complex signal-based automations and multi-stage lead qualification systems", 
-      duration: "3 weeks",
-      level: "Advanced",
-      format: "Self-paced",
-      price: "$997",
+      title: "1 on 1 Clay Training",
+      description: "Personalized Clay training with custom workflows built specifically for your business needs", 
+      duration: "Custom",
+      level: "All Levels",
+      format: "1-on-1",
+      price: "$999",
       features: ["Advanced integrations", "Custom API setups", "A/B testing frameworks", "1-on-1 office hours"]
     },
     {
