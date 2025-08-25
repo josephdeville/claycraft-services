@@ -3,6 +3,8 @@ import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
 import ToolsSection from "@/components/sections/ToolsSection";
+import CustomAIAgents from "@/components/sections/CustomAIAgents";
+import ClayClassroom from "@/components/sections/ClayClassroom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DollarSign, TrendingUp, Target, Zap } from "lucide-react";
@@ -68,6 +70,8 @@ const Index = () => {
       <ToolsSection />
       <Testimonials />
       <Services />
+      <CustomAIAgents />
+      <ClayClassroom />
       <Process />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
