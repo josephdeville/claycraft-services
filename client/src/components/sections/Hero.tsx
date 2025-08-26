@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             Scale Your Business with{" "}
-            <span className="text-orange-500">Clay Automation</span>{" "}
+            <span className="text-orange-500">Clay Works of Art</span>{" "}
             <span className="bg-gradient-brand bg-clip-text text-transparent">& Data Intelligence</span>
           </h1>
           

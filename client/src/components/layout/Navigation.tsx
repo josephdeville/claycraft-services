@@ -30,7 +30,7 @@ const Navigation = () => {
             className="text-xl font-bold text-gray-900 hover:text-orange-500 transition-colors"
             onClick={() => handleNavClick("logo")}
           >
-            Clay Automation
+            Clay Works of Art
           </Link>
 
           {/* Desktop Navigation */}
