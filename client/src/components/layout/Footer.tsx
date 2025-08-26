@@ -14,9 +14,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">Clay Automation</h3>
+            <h3 className="text-xl font-bold text-white">Clay Works of Art</h3>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Helping businesses scale with advanced Clay automation, data enrichment, and GTM engineering.
+              Helping businesses scale with advanced Clay Works of Art automation, data enrichment, and GTM engineering.
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-slate-300">

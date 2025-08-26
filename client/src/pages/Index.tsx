@@ -14,9 +14,9 @@ const Index = () => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Clay & GTM Engineering Services',
+    name: 'Clay Works of Art & GTM Engineering Services',
     description:
-      'Clay automation, data enrichment, lead routing, and GTM tooling. High-impact workflows engineered for growth.',
+      'Clay Works of Art automation, data enrichment, lead routing, and GTM tooling. High-impact workflows engineered for growth.',
     areaServed: 'Global',
     url: '/',
   };

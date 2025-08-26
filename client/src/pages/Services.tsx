@@ -16,11 +16,11 @@ const ServicesPage = () => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Clay Automation Services',
-    description: 'Professional Clay automation, data enrichment, and lead generation services for B2B companies.',
+    name: 'Clay Works of Art Services',
+    description: 'Professional Clay Works of Art automation, data enrichment, and lead generation services for B2B companies.',
     provider: {
       '@type': 'Organization',
-      name: 'Clay Automation Experts'
+      name: 'Clay Works of Art Experts'
     },
     areaServed: 'Global',
     url: '/services',
@@ -117,7 +117,7 @@ const ServicesPage = () => {
           <div className="text-center max-w-4xl mx-auto space-y-6">
             <Badge className="mb-4">Professional Services</Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Scale Your Business with <span className="text-orange-500">Clay Automation</span>
+              Scale Your Business with <span className="text-orange-500">Clay Works of Art</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               From manual prospecting to automated lead generation machines. We engineer custom Clay workflows 

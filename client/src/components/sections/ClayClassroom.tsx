@@ -67,7 +67,7 @@ const ClayClassroom = () => {
         <div className="text-center max-w-4xl mx-auto mb-16">
           <Badge className="mb-4">Clay Classroom</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Master <span className="text-orange-500">Clay Automation</span> with Expert Training
+            Master <span className="text-orange-500">Clay Works of Art</span> with Expert Training
           </h2>
           <p className="text-lg text-muted-foreground">
             From beginner fundamentals to advanced enterprise workflows - learn from the experts who've built 500+ Clay automations

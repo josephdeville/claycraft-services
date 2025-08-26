@@ -70,8 +70,8 @@ const BlogPage = () => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'Clay Automation Blog',
-    description: 'Latest insights, tutorials, and best practices for Clay automation and lead generation.',
+    name: 'Clay Works of Art Blog',
+    description: 'Latest insights, tutorials, and best practices for Clay Works of Art and lead generation.',
     url: '/blog'
   };
 
@@ -85,10 +85,10 @@ const BlogPage = () => {
             <div className="text-center max-w-4xl mx-auto">
               <Badge className="mb-4">Blog & Insights</Badge>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                Master <span className="text-orange-500">Clay Automation</span> with Expert Insights
+                Master <span className="text-orange-500">Clay Works of Art</span> with Expert Insights
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Stay ahead with the latest Clay automation strategies, case studies, and best practices from our team of experts.
+                Stay ahead with the latest Clay Works of Art strategies, case studies, and best practices from our team of experts.
               </p>
             </div>
           </div>

@@ -38,8 +38,8 @@ const ContactPage = () => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    name: 'Contact Clay Automation',
-    description: 'Get in touch with our Clay automation experts for a free strategy session.',
+    name: 'Contact Clay Works of Art',
+    description: 'Get in touch with our Clay Works of Art experts for a free strategy session.',
     url: '/contact'
   };
 

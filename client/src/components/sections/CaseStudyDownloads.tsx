@@ -146,7 +146,7 @@ const CaseStudyDownloads = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <Badge className="mb-4">Case Studies</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Real Results from <span className="text-orange-500">Clay Automation</span>
+            Real Results from <span className="text-orange-500">Clay Works of Art</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Download detailed case studies showing exactly how we've helped companies transform their lead generation with Clay.

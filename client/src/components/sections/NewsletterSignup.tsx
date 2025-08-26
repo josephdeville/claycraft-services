@@ -109,7 +109,7 @@ const NewsletterSignup = () => {
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-orange-500/10 text-orange-600 border-orange-200">Newsletter</Badge>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-              Master <span className="text-orange-500">Clay Automation</span> Weekly
+              Master <span className="text-orange-500">Clay Works of Art</span> Weekly
             </h2>
             <p className="text-lg text-muted-foreground">
               Join 2,500+ growth professionals getting actionable Clay strategies, case studies, and templates delivered every Tuesday.

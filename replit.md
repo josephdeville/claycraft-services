@@ -1,6 +1,6 @@
 # Overview
 
-This is a comprehensive Clay automation and GTM consulting website with advanced lead generation capabilities. The application features custom AI agents, Clay training courses, professional contact forms, newsletter signup, case study downloads, calendar booking integration, and Google Analytics tracking. Built with React, Express.js, and optimized for mobile performance with <3 second loading times.
+This is a comprehensive Clay Works of Art automation and GTM consulting website with advanced lead generation capabilities. The application features custom AI agents, Clay training courses, professional contact forms, newsletter signup, case study downloads, calendar booking integration, and Google Analytics tracking. Built with React, Express.js, and optimized for mobile performance with <3 second loading times.
 
 ## Recent Updates (August 2025)
 - ✅ Google Analytics implemented (G-GT1JPHEMW9) with event tracking
