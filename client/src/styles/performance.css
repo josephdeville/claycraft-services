@@ -1,0 +1,123 @@
+/* Performance and Mobile Optimization CSS */
+
+/* Critical rendering path optimization */
+html {
+  font-display: swap;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  loading: lazy;
+}
+
+/* Preload critical fonts */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+  src: local('Inter');
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  /* Hero section mobile optimization */
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+  
+  /* Card grids mobile optimization */
+  .grid-responsive {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Button mobile optimization */
+  .btn-mobile {
+    width: 100% !important;
+    padding: 0.75rem 1rem !important;
+  }
+  
+  /* Navigation mobile optimization */
+  .nav-mobile {
+    padding: 0.5rem 1rem !important;
+  }
+  
+  /* Form mobile optimization */
+  .form-mobile input,
+  .form-mobile textarea,
+  .form-mobile select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+  
+  /* Section padding mobile optimization */
+  .section-padding {
+    padding: 2rem 1rem !important;
+  }
+  
+  /* Text mobile optimization */
+  .text-mobile-sm {
+    font-size: 0.875rem !important;
+  }
+  
+  .text-mobile-base {
+    font-size: 1rem !important;
+  }
+  
+  /* Container mobile optimization */
+  .container-mobile {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tablet optimization */
+  .tablet-responsive {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .tablet-text-sm {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Performance improvements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}

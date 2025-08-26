@@ -1,38 +1,76 @@
-import { users, type User, type InsertUser } from "@shared/schema";
-
-// modify the interface with any CRUD methods
-// you might need
+import { 
+  type ContactSubmission, 
+  type InsertContactSubmission,
+  type NewsletterSubscription,
+  type InsertNewsletterSubscription,
+  type CaseStudyDownload,
+  type InsertCaseStudyDownload
+} from "@shared/schema";
 
 export interface IStorage {
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  // Contact submissions
+  createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
+  
+  // Newsletter subscriptions
+  createNewsletterSubscription(subscription: InsertNewsletterSubscription): Promise<NewsletterSubscription>;
+  getNewsletterSubscriptionByEmail(email: string): Promise<NewsletterSubscription | undefined>;
+  
+  // Case study downloads
+  createCaseStudyDownload(download: InsertCaseStudyDownload): Promise<CaseStudyDownload>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  currentId: number;
+  private contactSubmissions: Map<string, ContactSubmission>;
+  private newsletterSubscriptions: Map<string, NewsletterSubscription>;
+  private caseStudyDownloads: Map<string, CaseStudyDownload>;
 
   constructor() {
-    this.users = new Map();
-    this.currentId = 1;
+    this.contactSubmissions = new Map();
+    this.newsletterSubscriptions = new Map();
+    this.caseStudyDownloads = new Map();
   }
 
-  async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+  async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
+    const id = crypto.randomUUID();
+    const contactSubmission: ContactSubmission = {
+      ...submission,
+      id,
+      phone: submission.phone || null,
+      newsletter: submission.newsletter || false,
+      linkedinProfile: submission.linkedinProfile || null,
+      createdAt: new Date(),
+    };
+    this.contactSubmissions.set(id, contactSubmission);
+    return contactSubmission;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
+  async createNewsletterSubscription(subscription: InsertNewsletterSubscription): Promise<NewsletterSubscription> {
+    const id = crypto.randomUUID();
+    const newsletterSubscription: NewsletterSubscription = {
+      ...subscription,
+      id,
+      isActive: true,
+      createdAt: new Date(),
+    };
+    this.newsletterSubscriptions.set(id, newsletterSubscription);
+    return newsletterSubscription;
+  }
+
+  async getNewsletterSubscriptionByEmail(email: string): Promise<NewsletterSubscription | undefined> {
+    return Array.from(this.newsletterSubscriptions.values()).find(
+      (subscription) => subscription.email === email,
     );
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createCaseStudyDownload(download: InsertCaseStudyDownload): Promise<CaseStudyDownload> {
+    const id = crypto.randomUUID();
+    const caseStudyDownload: CaseStudyDownload = {
+      ...download,
+      id,
+      createdAt: new Date(),
+    };
+    this.caseStudyDownloads.set(id, caseStudyDownload);
+    return caseStudyDownload;
   }
 }
 

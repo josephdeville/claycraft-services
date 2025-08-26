@@ -5,6 +5,11 @@ import Testimonials from "@/components/sections/Testimonials";
 import ToolsSection from "@/components/sections/ToolsSection";
 import CustomAIAgents from "@/components/sections/CustomAIAgents";
 import ClayClassroom from "@/components/sections/ClayClassroom";
+import ContactForm from "@/components/sections/ContactForm";
+import NewsletterSignup from "@/components/sections/NewsletterSignup";
+import SocialProof from "@/components/sections/SocialProof";
+import CalendarBooking from "@/components/sections/CalendarBooking";
+import CaseStudyDownloads from "@/components/sections/CaseStudyDownloads";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DollarSign, TrendingUp, Target, Zap } from "lucide-react";
@@ -72,6 +77,11 @@ const Index = () => {
       <Services />
       <CustomAIAgents />
       <ClayClassroom />
+      <SocialProof />
+      <CaseStudyDownloads />
+      <CalendarBooking />
+      <NewsletterSignup />
+      <ContactForm />
       <Process />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
