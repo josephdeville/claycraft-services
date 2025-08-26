@@ -45,7 +45,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="py-16 md:py-24">
+    <section id="process" className="py-16 md:py-24 bg-black">
       <div className="container mx-auto px-6">
         <header className="max-w-2xl mb-10">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Process</h2>

@@ -11,7 +11,7 @@ const Hero = () => {
     // For now, use mailto - can be replaced with Supabase later
     window.location.href = `mailto:hello@yourdomain.com?subject=GTM%20Automation%20Interest&body=Hi,%0D%0A%0D%0AFirst%20Name:%20${firstName}%0D%0AEmail:%20${email}%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20GTM%20automation%20and%20Clay%20workflows.`;
   };
-  return <section className="relative min-h-screen bg-gradient-to-b from-background to-background/95">
+  return <section className="relative min-h-screen bg-black">
       <div className="container mx-auto px-6 py-8">
         {/* Top Navigation */}
         <nav className="flex items-center justify-between mb-8">

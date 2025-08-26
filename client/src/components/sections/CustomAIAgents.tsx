@@ -36,7 +36,7 @@ const CustomAIAgents = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-card/30">
+    <section className="py-16 md:py-24 bg-black">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">

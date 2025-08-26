@@ -108,11 +108,11 @@ const ServicesPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
+    <div className="min-h-screen bg-black">
       <Navigation />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-8 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100">
+        <section className="py-8 md:py-16 lg:py-24 bg-black">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-4xl mx-auto space-y-6">
             <Badge className="mb-4">Professional Services</Badge>
@@ -140,7 +140,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Tabs */}
-      <section className="py-8 md:py-16 bg-gradient-to-br from-slate-50 to-gray-100">
+      <section className="py-8 md:py-16 bg-black">
         <div className="container mx-auto px-4 md:px-6">
           <Tabs defaultValue="automation" className="max-w-6xl mx-auto">
             <TabsList className="grid w-full grid-cols-3 mb-12">

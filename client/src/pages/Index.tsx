@@ -40,13 +40,13 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
+    <div className="min-h-screen bg-black">
       <Navigation />
       <main className="pt-16">
         <Hero />
         
         {/* What You'll Discover Section */}
-        <section className="py-8 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100">
+        <section className="py-8 md:py-16 lg:py-24 bg-black">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <Badge className="mb-4">Strategy Session</Badge>
