@@ -7,9 +7,9 @@ import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
 import { initGA } from "./lib/analytics";
 import Index from "./pages/Index";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
+import ServicesPage from "./pages/Services";
+import ContactPage from "./pages/Contact";
+import BlogPage from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -30,9 +30,9 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

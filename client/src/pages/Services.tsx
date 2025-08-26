@@ -1,10 +1,18 @@
+import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
+import Services from "@/components/sections/Services";
+import CustomAIAgents from "@/components/sections/CustomAIAgents";
+import Process from "@/components/sections/Process";
+import SocialProof from "@/components/sections/SocialProof";
+import CaseStudyDownloads from "@/components/sections/CaseStudyDownloads";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Zap, Database, Target, TrendingUp, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { CheckCircle, Zap, Database, Target, TrendingUp, Users, ArrowRight } from "lucide-react";
 
-const Services = () => {
+const ServicesPage = () => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -100,21 +108,31 @@ const Services = () => {
   );
 
   return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-background to-background/95">
-        <div className="container mx-auto px-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
+      <Navigation />
+      <main className="pt-16">
+        {/* Hero Section */}
+        <section className="py-8 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-4xl mx-auto space-y-6">
-            <Badge>Our Services</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Clay Automation <span className="text-orange-500">Services</span>
+            <Badge className="mb-4">Professional Services</Badge>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              Scale Your Business with <span className="text-orange-500">Clay Automation</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From simple lead enrichment to complex multi-stage automation workflows, we build Clay systems that scale your business.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              From manual prospecting to automated lead generation machines. We engineer custom Clay workflows 
+              that generate qualified leads while you focus on closing deals.
             </p>
-            <div className="flex justify-center">
-              <Button variant="hero" size="lg">
-                Book Strategy Call
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link to="/contact" data-testid="button-services-contact">
+                  Get Free Strategy Session <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8">
+                <Link to="/" data-testid="link-view-case-studies">
+                  View Case Studies
+                </Link>
               </Button>
             </div>
           </div>
@@ -122,8 +140,8 @@ const Services = () => {
       </section>
 
       {/* Services Tabs */}
-      <section className="py-16 bg-card/30">
-        <div className="container mx-auto px-6">
+      <section className="py-8 md:py-16 bg-gradient-to-br from-slate-50 to-gray-100">
+        <div className="container mx-auto px-4 md:px-6">
           <Tabs defaultValue="automation" className="max-w-6xl mx-auto">
             <TabsList className="grid w-full grid-cols-3 mb-12">
               <TabsTrigger value="automation">Clay Automation</TabsTrigger>
@@ -170,22 +188,33 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Additional Services Sections */}
+      <Services />
+      <CustomAIAgents />
+      <Process />
+      <SocialProof />
+      <CaseStudyDownloads />
+
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-500/10 to-orange-600/10">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-8 md:py-16 bg-gradient-to-r from-orange-500/10 to-orange-600/10">
+        <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl font-semibold mb-4">Ready to Scale Your Clay Operations?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Book a free strategy call to discuss your Clay automation needs and get a custom implementation plan.
           </p>
-          <Button variant="hero" size="lg">
-            Schedule Free Consultation
+          <Button asChild size="lg">
+            <Link to="/contact" data-testid="button-services-cta">
+              Schedule Free Consultation
+            </Link>
           </Button>
         </div>
       </section>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-    </main>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      </main>
+      <Footer />
+    </div>
   );
 };
 
-export default Services;
+export default ServicesPage;

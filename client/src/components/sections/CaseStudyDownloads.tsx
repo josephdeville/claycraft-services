@@ -107,8 +107,8 @@ const CaseStudyDownloads = () => {
   if (downloadedStudy) {
     const study = caseStudies.find(s => s.id === downloadedStudy);
     return (
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-6">
+      <section className="py-8 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100">
+        <div className="container mx-auto px-4 md:px-6">
           <Card className="max-w-2xl mx-auto text-center bg-green-50 border-green-200">
             <CardContent className="pt-8 pb-8">
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
@@ -141,8 +141,8 @@ const CaseStudyDownloads = () => {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50" id="case-studies">
-      <div className="container mx-auto px-6">
+    <section className="py-8 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100" id="case-studies">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <Badge className="mb-4">Case Studies</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
