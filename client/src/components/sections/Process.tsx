@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CalendarClock, Workflow, Rocket, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -79,8 +80,8 @@ const Process = () => {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <Button asChild variant="brand" size="lg">
-            <a href="mailto:hello@yourdomain.com?subject=Discovery%20Call%20-%20Clay%20%26%20GTM">Book a discovery call</a>
+          <Button asChild variant="brand" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+            <Link to="/contact">Book a discovery call</Link>
           </Button>
         </div>
       </div>

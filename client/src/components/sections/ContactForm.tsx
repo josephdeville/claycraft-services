@@ -15,6 +15,7 @@ import { trackEvent } from "@/lib/analytics";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { Link } from "react-router-dom";
 
 const contactSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -144,8 +145,8 @@ const ContactForm = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">Schedule a free 30-min strategy session</p>
-                <Button variant="outline" className="mt-3" data-testid="button-book-call">
-                  Schedule Now
+                <Button asChild variant="outline" className="mt-3 border-orange-500 text-orange-500 hover:bg-orange-50" data-testid="button-book-call">
+                  <Link to="/contact#calendar">Schedule Now</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -159,8 +160,8 @@ const ContactForm = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">Connect with us on LinkedIn</p>
-                <Button variant="outline" className="mt-3" data-testid="link-linkedin">
-                  Connect
+                <Button asChild variant="outline" className="mt-3 border-orange-500 text-orange-500 hover:bg-orange-50" data-testid="link-linkedin">
+                  <a href="https://linkedin.com/company/clayworksofart" target="_blank" rel="noopener noreferrer">Connect</a>
                 </Button>
               </CardContent>
             </Card>
@@ -386,7 +387,7 @@ const ContactForm = () => {
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full btn-mobile"
+                      className="w-full btn-mobile bg-orange-500 hover:bg-orange-600 text-white"
                       disabled={contactMutation.isPending}
                       data-testid="button-submit-contact"
                     >

@@ -80,8 +80,8 @@ const Hero = () => {
               <Input type="email" placeholder="Email Address" value={email} onChange={e => setEmail(e.target.value)} required className="bg-background" />
             </div>
             
-            <Button type="submit" variant="hero" className="w-full h-12 text-base font-semibold">
-              Book Your Clay Automation Audit →
+            <Button type="submit" variant="hero" className="w-full h-12 text-base font-semibold bg-orange-500 hover:bg-orange-600 text-white border-orange-500">
+              Book Your Clay Works of Art Audit →
             </Button>
             
             <div className="space-y-2 text-sm text-muted-foreground">

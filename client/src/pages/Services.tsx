@@ -100,8 +100,8 @@ const ServicesPage = () => {
             </li>
           ))}
         </ul>
-        <Button variant="outline" className="w-full">
-          Learn More
+        <Button asChild variant="outline" className="w-full border-orange-500 text-orange-500 hover:bg-orange-50">
+          <Link to="/contact">Learn More</Link>
         </Button>
       </CardContent>
     </Card>
@@ -124,13 +124,13 @@ const ServicesPage = () => {
               that generate qualified leads while you focus on closing deals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="text-lg px-8">
+              <Button asChild size="lg" className="text-lg px-8 bg-orange-500 hover:bg-orange-600 text-white">
                 <Link to="/contact" data-testid="button-services-contact">
                   Get Free Strategy Session <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link to="/" data-testid="link-view-case-studies">
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 border-orange-500 text-orange-500 hover:bg-orange-50">
+                <Link to="/#case-studies" data-testid="link-view-case-studies">
                   View Case Studies
                 </Link>
               </Button>
