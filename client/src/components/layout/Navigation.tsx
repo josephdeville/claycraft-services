@@ -21,7 +21,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-orange-500 to-black/90 backdrop-blur-sm border-b border-orange-600 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-sm border-b border-gray-800 shadow-lg">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -72,7 +72,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-orange-600 bg-black/95">
+          <div className="md:hidden py-4 border-t border-gray-800 bg-black">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
