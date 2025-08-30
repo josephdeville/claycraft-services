@@ -33,45 +33,7 @@ const Hero = () => {
             Transform your lead generation with AI-powered Clay workflows that deliver 500+ qualified prospects monthly on autopilot
           </p>
 
-          {/* Video/Case Study Section */}
-          <div className="bg-card border rounded-lg p-8 max-w-2xl mx-auto">
-            <div className="space-y-4">
-              <Badge variant="destructive" className="bg-red-500">
-                🔴 LIVE CASE STUDY
-              </Badge>
-              
-              <div className="relative bg-gradient-to-br from-orange-400 to-orange-600 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
-                <Play className="w-8 h-8 text-white ml-1" />
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold">Watch: The $2M GTM Transformation</h3>
-                <p className="text-muted-foreground">15 minutes that could change your business forever</p>
-              </div>
-              
-              <div className="text-right text-sm text-muted-foreground">15:42</div>
-              
-              <div className="space-y-2">
-                <h4 className="font-semibold">See The Exact System That Generated $500K+ in Year 1</h4>
-                <p className="text-sm text-muted-foreground">
-                  Including the 'automation-first' strategy that scaled our pipeline 10x and the Clay workflows that generated qualified leads on autopilot
-                </p>
-              </div>
-              
-              {/* Stats */}
-              <div className="flex justify-center space-x-8 pt-4">
-                <div className="text-center">
-                  <div className="text-sm text-red-500">• 50K+ leads</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-sm text-red-500">• $2M ARR generated</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-sm text-red-500">• 90% time saved</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
           {/* Email Capture Form */}
           <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
