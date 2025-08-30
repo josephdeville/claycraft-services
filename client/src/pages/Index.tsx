@@ -56,13 +56,13 @@ const Index = () => {
             </div>
             
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-              {features.map(({ icon: Icon, title, description }) => (
-                <Card key={title} className="text-center p-6 hover:shadow-lg transition-shadow">
+              {features.map(({ icon: Icon, title, description }, index) => (
+                <Card key={title} className="text-center p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer group animate-in slide-in-from-bottom-8" style={{ animationDelay: `${index * 200}ms` }}>
                   <CardContent className="space-y-4 p-0">
-                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 mx-auto">
-                      <Icon className="h-8 w-8" />
+                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 mx-auto group-hover:bg-orange-500/20 transition-colors">
+                      <Icon className="h-8 w-8 group-hover:scale-110 transition-transform" />
                     </div>
-                    <h3 className="font-semibold text-lg">{title}</h3>
+                    <h3 className="font-semibold text-lg group-hover:text-orange-500 transition-colors">{title}</h3>
                     <p className="text-muted-foreground text-sm">{description}</p>
                   </CardContent>
                 </Card>

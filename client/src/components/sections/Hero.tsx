@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Play, CheckCircle } from "lucide-react";
 import { useState } from "react";
+import CounterAnimation from "@/components/interactive/CounterAnimation";
+import FloatingElements from "@/components/interactive/FloatingElements";
 const Hero = () => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -11,7 +13,8 @@ const Hero = () => {
     // For now, use mailto - can be replaced with Supabase later
     window.location.href = `mailto:hello@yourdomain.com?subject=GTM%20Automation%20Interest&body=Hi,%0D%0A%0D%0AFirst%20Name:%20${firstName}%0D%0AEmail:%20${email}%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20GTM%20automation%20and%20Clay%20workflows.`;
   };
-  return <section className="relative min-h-screen bg-black">
+  return <section className="relative min-h-screen bg-black overflow-hidden">
+    <FloatingElements />
       <div className="container mx-auto px-6 py-8">
         {/* Top Navigation */}
         <nav className="flex items-center justify-between mb-8">
@@ -23,14 +26,14 @@ const Hero = () => {
 
         {/* Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-in slide-in-from-bottom-8 duration-1000">
             Scale Your Business with{" "}
-            <span className="text-orange-500">Clay Works of Art</span>{" "}
-            <span className="bg-gradient-brand bg-clip-text text-transparent">& Data Intelligence</span>
+            <span className="text-orange-500 hover:text-orange-400 transition-colors cursor-pointer">Clay Works of Art</span>{" "}
+            <span className="bg-gradient-brand bg-clip-text text-transparent hover:scale-105 transition-transform inline-block">& Data Intelligence</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Transform your lead generation with AI-powered Clay workflows that deliver 500+ qualified prospects monthly on autopilot
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-200">
+            Transform your lead generation with AI-powered Clay workflows that deliver <CounterAnimation target={500} className="text-orange-500 font-semibold" />+ qualified prospects monthly on autopilot
           </p>
 
           
