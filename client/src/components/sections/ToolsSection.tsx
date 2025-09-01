@@ -7,15 +7,15 @@ import outreachLogo from "@/assets/logos/outreach-official.png";
 import cursorLogo from "@/assets/logos/cursor-official.png";
 import apifyLogo from "@/assets/logos/apify-official.png";
 import commonroomLogo from "@/assets/logos/commonroom-official.png";
-import netlifyLogo from "@/assets/logos/netlify-official.png";
+import netlifyLogo from "@assets/netlify_1756711653418.png";
 import lovableLogo from "@/assets/logos/lovable-official.png";
-import replitLogo from "@/assets/logos/replit-official.png";
+import replitLogo from "@assets/replit_1756711653418.png";
 import n8nLogo from "@/assets/logos/n8n-official.png";
 import oceanLogo from "@/assets/logos/ocean-official.png";
-import pocusLogo from "@/assets/logos/pocus-official.png";
+import pocusLogo from "@assets/Pocus_1756711653418.png";
 import elevenlabsLogo from "@/assets/logos/elevenlabs-official.png";
 import plusvibeLogo from "@/assets/logos/plusvibe-official.png";
-import exaLogo from "@/assets/logos/exa-official.png";
+import exaLogo from "@assets/exa_1756711653417.png";
 
 const ToolsSection = () => {
   const tools = [
