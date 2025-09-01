@@ -72,7 +72,7 @@ const ServicesPage = () => {
       title: "Clay Strategy Audit",
       description: "Comprehensive analysis of your current Clay setup with optimization recommendations",
       features: ["Current state analysis", "Optimization roadmap", "ROI projections", "Implementation plan"],
-      price: "$500 one-time",
+      price: "$5 one-time",
       icon: CheckCircle
     }
   ];
