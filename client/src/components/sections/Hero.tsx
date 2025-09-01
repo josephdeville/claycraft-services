@@ -68,9 +68,8 @@ const Hero = () => {
 
           {/* Social Proof */}
           <div className="bg-card border rounded-lg p-4 max-w-md mx-auto">
-            <div className="flex items-center justify-between">
-              <Badge variant="destructive">LIVE</Badge>
-              <div className="text-right">
+            <div className="flex items-center justify-center">
+              <div className="text-center">
                 <div className="text-lg font-bold">247+</div>
                 <div className="text-xs text-muted-foreground">GTM leaders have booked this session in the last 30 days</div>
               </div>
