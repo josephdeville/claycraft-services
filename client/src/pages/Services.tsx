@@ -62,7 +62,7 @@ const ServicesPage = () => {
       title: "Clay Infrastructure Setup",
       description: "Complete Clay workspace setup and configuration for maximum efficiency",
       features: ["Workspace architecture", "Team permissions", "Workflow templates", "Best practices training"],
-      price: "Starting at $1,500 one-time",
+      price: "Starting at $2,000 one-time",
       icon: Users
     }
   ];
