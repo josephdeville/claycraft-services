@@ -126,11 +126,12 @@ const ToolsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-6xl mx-auto">
           {tools.map((tool) => (
             <div key={tool.name} className="text-center group">
-              <div className="mb-4 transition-transform group-hover:scale-110">
+              <div className="mb-4 transition-transform group-hover:scale-110 bg-white/10 rounded-lg p-3">
                 <img 
                   src={tool.logo} 
                   alt={`${tool.name} logo`}
-                  className="w-16 h-16 mx-auto rounded-lg shadow-sm"
+                  className="w-10 h-10 mx-auto object-contain"
+                  style={{ imageRendering: 'crisp-edges' }}
                 />
               </div>
               <h3 className="font-semibold text-sm mb-1">{tool.name}</h3>
