@@ -6,6 +6,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import ToolsSection from "@/components/sections/ToolsSection";
 import CustomAIAgents from "@/components/sections/CustomAIAgents";
 import ClayClassroom from "@/components/sections/ClayClassroom";
+import Credentials from "@/components/sections/Credentials";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Target, Zap } from "lucide-react";
@@ -72,6 +73,7 @@ const Index = () => {
         </section>
 
         <ToolsSection />
+        <Credentials />
         <Testimonials />
         <Services />
         <CustomAIAgents />

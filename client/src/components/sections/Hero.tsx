@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-            Transform your lead generation with AI-powered Clay workflows that deliver <CounterAnimation target={500} className="text-orange-500 font-semibold" />+ qualified prospects monthly on autopilot
+            Your dedicated <span className="text-orange-500 font-semibold">Certified GTM Engineer</span> building AI-powered Clay workflows that deliver <CounterAnimation target={500} className="text-orange-500 font-semibold" />+ qualified prospects monthly on autopilot
           </p>
 
           
@@ -71,7 +71,7 @@ const Hero = () => {
             <div className="flex items-center justify-center">
               <div className="text-center">
                 <div className="text-lg font-bold">247+</div>
-                <div className="text-xs text-muted-foreground">GTM leaders have booked this session in the last 30 days</div>
+                <div className="text-xs text-muted-foreground">Revenue leaders trust our certified GTM engineering expertise</div>
               </div>
             </div>
           </div>
