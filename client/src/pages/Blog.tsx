@@ -76,11 +76,11 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
+    <div className="min-h-screen bg-black">
       <Navigation />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-8 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100">
+        <section className="py-8 md:py-16 lg:py-24 bg-black">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-4xl mx-auto">
               <Badge className="mb-4">Blog & Insights</Badge>
@@ -96,7 +96,7 @@ const BlogPage = () => {
 
         {/* Featured Post */}
         {blogPosts.filter(post => post.featured).map(post => (
-          <section key={post.id} className="py-8 md:py-16 bg-gradient-to-br from-slate-50 to-gray-100">
+          <section key={post.id} className="py-8 md:py-16 bg-black">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-6xl mx-auto">
                 <Badge className="mb-4 bg-orange-500 text-white">Featured</Badge>
@@ -130,7 +130,7 @@ const BlogPage = () => {
                         </Button>
                       </div>
                     </div>
-                    <div className="bg-gradient-to-br from-slate-100 to-gray-200 p-8 flex items-center justify-center">
+                    <div className="bg-gray-800 p-8 flex items-center justify-center">
                       <div className="text-center">
                         <BookOpen className="h-16 w-16 text-orange-500 mx-auto mb-4" />
                         <p className="text-muted-foreground">Featured Article</p>
@@ -144,7 +144,7 @@ const BlogPage = () => {
         ))}
 
         {/* Blog Posts Grid */}
-        <section className="py-8 md:py-16 bg-gradient-to-br from-slate-50 to-gray-100">
+        <section className="py-8 md:py-16 bg-black">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold mb-8">Latest Articles</h2>
@@ -167,7 +167,7 @@ const BlogPage = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {blogPosts.filter(post => !post.featured).map((post) => (
                   <Card key={post.id} className="h-full hover:shadow-lg transition-shadow">
-                    <div className="bg-gradient-to-br from-slate-100 to-gray-200 p-8 text-center">
+                    <div className="bg-gray-800 p-8 text-center">
                       <TrendingUp className="h-12 w-12 text-orange-500 mx-auto" />
                     </div>
                     <CardHeader>
