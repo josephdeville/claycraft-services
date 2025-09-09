@@ -134,7 +134,7 @@ const Credentials = () => {
                   CWA
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold">Clay Works of Art</div>
+                  <div className="font-semibold">Joseph Deville</div>
                   <div className="text-sm text-muted-foreground">Certified GTM Engineer</div>
                 </div>
               </div>
