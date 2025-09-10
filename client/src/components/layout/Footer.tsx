@@ -15,13 +15,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white">Clay Works of Art</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              Helping businesses scale with advanced Clay Works of Art automation, data enrichment, and GTM engineering.
-            </p>
+            <p className="text-slate-300 text-sm leading-relaxed">Startup anad IT Growth Hackers with advanced Clay Implementations, data enrichment, and GTM engineering.</p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-slate-300">
                 <Mail className="h-4 w-4" />
-                <span>hello@clayautomation.com</span>
+                <span>info@clayworksofart.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-slate-300">
                 <Phone className="h-4 w-4" />
