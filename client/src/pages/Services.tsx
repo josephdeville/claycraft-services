@@ -22,11 +22,11 @@ const ServicesPage = () => {
     // Set meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $2,500/month.');
+      metaDescription.setAttribute('content', 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $1,200/month.');
     } else {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $2,500/month.';
+      meta.content = 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $1,200/month.';
       document.head.appendChild(meta);
     }
     
@@ -44,7 +44,7 @@ const ServicesPage = () => {
     };
     
     setOGTag('og:title', 'Lead Generation Services - B2B GTM Engineering Solutions');
-    setOGTag('og:description', 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $2,500/month.');
+    setOGTag('og:description', 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $1,200/month.');
     setOGTag('og:type', 'website');
     setOGTag('og:url', window.location.origin + '/services');
     
@@ -83,21 +83,21 @@ const ServicesPage = () => {
       title: "Lead Enrichment Workflows",
       description: "Automated data enrichment that turns basic contact info into comprehensive prospect profiles",
       features: ["50+ data sources integration", "Real-time enrichment", "Custom scoring models", "CRM synchronization"],
-      price: "Starting at $1,000/month",
+      price: "Starting at $1,200/month",
       icon: Database
     },
     {
       title: "Signal-Based Automation",
       description: "Trigger-based workflows that identify and act on buying signals automatically",
       features: ["Intent data monitoring", "Job change tracking", "Company growth signals", "Automated outreach"],
-      price: "Starting at $2,000/month", 
+      price: "Starting at $2,500/month", 
       icon: Target
     },
     {
       title: "Scale & Optimization",
       description: "Continuous optimization and scaling of your Clay automation infrastructure",
       features: ["Performance monitoring", "A/B testing setup", "Cost optimization", "Advanced integrations"],
-      price: "Starting at $4,000/month",
+      price: "Starting at $3,000/month",
       icon: TrendingUp
     }
   ];
