@@ -15,14 +15,10 @@ export const initGA = () => {
     return;
   }
 
-  console.log('✅ Initializing Google Analytics with ID:', measurementId);
-
   // Add Google Analytics script to the head
   const script1 = document.createElement('script');
   script1.async = true;
   script1.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  script1.onload = () => console.log('✅ Google Analytics script loaded successfully');
-  script1.onerror = () => console.error('❌ Failed to load Google Analytics script');
   document.head.appendChild(script1);
 
   // Initialize gtag
@@ -31,23 +27,17 @@ export const initGA = () => {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '${measurementId}');
-    console.log('✅ Google Analytics configured with ID: ${measurementId}');
+    gtag('config', '${measurementId}', { send_page_view: false });
   `;
   document.head.appendChild(script2);
 };
 
 // Track page views - useful for single-page applications
 export const trackPageView = (url: string) => {
-  if (typeof window === 'undefined' || !window.gtag) {
-    console.warn('⚠️ gtag not available for page view tracking');
-    return;
-  }
+  if (typeof window === 'undefined' || !window.gtag) return;
   
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
   if (!measurementId) return;
-  
-  console.log('📊 Tracking page view:', url);
   window.gtag('config', measurementId, {
     page_path: url
   });
@@ -67,4 +57,23 @@ export const trackEvent = (
     event_label: label,
     value: value,
   });
+};
+
+// Track initial page view after GA is initialized
+export const trackInitialPageView = () => {
+  if (typeof window === 'undefined') return;
+  
+  const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+  if (!measurementId) return;
+  
+  // Wait for gtag to be available, then track initial page view
+  const checkGtag = () => {
+    if (typeof window.gtag === 'function') {
+      trackPageView(window.location.pathname + window.location.search);
+    } else {
+      setTimeout(checkGtag, 100);
+    }
+  };
+  
+  checkGtag();
 };
