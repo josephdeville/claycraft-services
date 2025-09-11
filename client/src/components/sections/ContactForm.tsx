@@ -18,17 +18,13 @@ import { apiRequest } from "@/lib/queryClient";
 import { Link } from "react-router-dom";
 
 const contactSchema = z.object({
-  firstName: z.string().min(2, "First name must be at least 2 characters"),
-  lastName: z.string().min(2, "Last name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
+  name: z.string().min(2, "Name must be at least 2 characters"),
   company: z.string().min(2, "Company name is required"),
+  email: z.string().email("Please enter a valid email address"),
   phone: z.string().optional(),
-  projectType: z.string().min(1, "Please select a project type"),
-  budget: z.string().min(1, "Please select a budget range"),
-  timeline: z.string().min(1, "Please select a timeline"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-  newsletter: z.boolean().default(false),
-  linkedinProfile: z.string().optional(),
+  currentLeadVolume: z.string().min(1, "Please select your current monthly lead volume"),
+  biggestChallenge: z.string().min(10, "Please describe your biggest lead generation challenge"),
+  preferredContact: z.string().min(1, "Please select your preferred contact method"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -40,17 +36,13 @@ const ContactForm = () => {
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
+      name: "",
       company: "",
+      email: "",
       phone: "",
-      projectType: "",
-      budget: "",
-      timeline: "",
-      message: "",
-      newsletter: false,
-      linkedinProfile: "",
+      currentLeadVolume: "",
+      biggestChallenge: "",
+      preferredContact: "",
     },
   });
 
@@ -88,16 +80,16 @@ const ContactForm = () => {
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
               <h2 className="text-2xl font-bold mb-4">Thank you for reaching out!</h2>
               <p className="text-muted-foreground mb-6">
-                We've received your message and will get back to you within 24 hours with next steps for your Clay automation project.
+                We've received your information and will get back to you within 24 hours with next steps for your lead generation strategy.
               </p>
               <div className="space-y-4">
                 <p className="text-sm">
                   <strong>What happens next:</strong>
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Initial project review and scope assessment</li>
+                  <li>• Lead generation audit and gap analysis</li>
                   <li>• Custom strategy session scheduling</li>
-                  <li>• Detailed proposal with timeline and pricing</li>
+                  <li>• Personalized recommendations and next steps</li>
                 </ul>
               </div>
             </CardContent>
@@ -116,7 +108,7 @@ const ContactForm = () => {
             Ready to <span className="text-orange-500">Transform</span> Your Lead Generation?
           </h2>
           <p className="text-lg text-muted-foreground">
-            Tell us about your project and we'll create a custom Clay automation strategy for your business.
+            Tell us about your current challenges and we'll create a custom GTM engineering strategy for your business.
           </p>
         </div>
 
@@ -171,62 +163,34 @@ const ContactForm = () => {
           <div className="lg:col-span-2">
             <Card>
               <CardHeader>
-                <CardTitle>Tell Us About Your Project</CardTitle>
+                <CardTitle>Get Your Free Lead Generation Audit</CardTitle>
               </CardHeader>
               <CardContent>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    {/* Name Fields */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 tablet-responsive">
-                      <FormField
-                        control={form.control}
-                        name="firstName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>First Name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="John" {...field} data-testid="input-first-name" className="form-mobile" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="lastName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Last Name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Doe" {...field} data-testid="input-last-name" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
+                    {/* Name Field */}
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Name *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="John Doe" {...field} data-testid="input-name" className="form-mobile" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
                     {/* Email and Company */}
                     <div className="grid md:grid-cols-2 gap-4">
                       <FormField
                         control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email Address</FormLabel>
-                            <FormControl>
-                              <Input type="email" placeholder="john@company.com" {...field} data-testid="input-email" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
                         name="company"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Company</FormLabel>
+                            <FormLabel>Company *</FormLabel>
                             <FormControl>
                               <Input placeholder="Your Company" {...field} data-testid="input-company" />
                             </FormControl>
@@ -234,31 +198,14 @@ const ContactForm = () => {
                           </FormItem>
                         )}
                       />
-                    </div>
-
-                    {/* Phone and LinkedIn */}
-                    <div className="grid md:grid-cols-2 gap-4">
                       <FormField
                         control={form.control}
-                        name="phone"
+                        name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Phone (Optional)</FormLabel>
+                            <FormLabel>Email *</FormLabel>
                             <FormControl>
-                              <Input placeholder="+1 (555) 123-4567" {...field} data-testid="input-phone" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="linkedinProfile"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>LinkedIn Profile (Optional)</FormLabel>
-                            <FormControl>
-                              <Input placeholder="linkedin.com/in/yourprofile" {...field} data-testid="input-linkedin" />
+                              <Input type="email" placeholder="john@company.com" {...field} data-testid="input-email" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -266,26 +213,40 @@ const ContactForm = () => {
                       />
                     </div>
 
-                    {/* Project Details */}
+                    {/* Phone */}
                     <FormField
                       control={form.control}
-                      name="projectType"
+                      name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Project Type</FormLabel>
+                          <FormLabel>Phone</FormLabel>
+                          <FormControl>
+                            <Input placeholder="+1 (555) 123-4567" {...field} data-testid="input-phone" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {/* Current Monthly Lead Volume */}
+                    <FormField
+                      control={form.control}
+                      name="currentLeadVolume"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Current Monthly Lead Volume *</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger data-testid="select-project-type">
-                                <SelectValue placeholder="Select project type" />
+                              <SelectTrigger data-testid="select-lead-volume">
+                                <SelectValue placeholder="Select your current monthly lead volume" />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="lead-generation">Lead Generation Setup</SelectItem>
-                              <SelectItem value="data-enrichment">Data Enrichment & Automation</SelectItem>
-                              <SelectItem value="custom-ai-agents">Custom AI Agents</SelectItem>
-                              <SelectItem value="clay-training">Clay Training & Certification</SelectItem>
-                              <SelectItem value="full-stack-automation">Full Stack GTM Automation</SelectItem>
-                              <SelectItem value="consulting">Strategy Consulting</SelectItem>
+                              <SelectItem value="0-10">0-10 leads per month</SelectItem>
+                              <SelectItem value="11-25">11-25 leads per month</SelectItem>
+                              <SelectItem value="26-50">26-50 leads per month</SelectItem>
+                              <SelectItem value="51-100">51-100 leads per month</SelectItem>
+                              <SelectItem value="100-plus">100+ leads per month</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />
@@ -293,69 +254,19 @@ const ContactForm = () => {
                       )}
                     />
 
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="budget"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Budget Range</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger data-testid="select-budget">
-                                  <SelectValue placeholder="Select budget" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="under-5k">Under $5,000</SelectItem>
-                                <SelectItem value="5k-15k">$5,000 - $15,000</SelectItem>
-                                <SelectItem value="15k-30k">$15,000 - $30,000</SelectItem>
-                                <SelectItem value="30k-50k">$30,000 - $50,000</SelectItem>
-                                <SelectItem value="50k-plus">$50,000+</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="timeline"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Timeline</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger data-testid="select-timeline">
-                                  <SelectValue placeholder="Select timeline" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="asap">ASAP</SelectItem>
-                                <SelectItem value="1-month">Within 1 month</SelectItem>
-                                <SelectItem value="2-3-months">2-3 months</SelectItem>
-                                <SelectItem value="6-months">3-6 months</SelectItem>
-                                <SelectItem value="planning">Just planning</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
+                    {/* Biggest Lead Generation Challenge */}
                     <FormField
                       control={form.control}
-                      name="message"
+                      name="biggestChallenge"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Project Details</FormLabel>
+                          <FormLabel>Biggest Lead Generation Challenge *</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Tell us about your current lead generation process, pain points, and goals..." 
+                              placeholder="Describe your biggest challenge with lead generation (e.g., low lead quality, manual processes, poor conversion rates, etc.)" 
                               className="min-h-[120px]" 
                               {...field}
-                              data-testid="textarea-message"
+                              data-testid="textarea-challenge"
                             />
                           </FormControl>
                           <FormMessage />
@@ -363,23 +274,27 @@ const ContactForm = () => {
                       )}
                     />
 
+                    {/* Preferred Contact Method */}
                     <FormField
                       control={form.control}
-                      name="newsletter"
+                      name="preferredContact"
                       render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value}
-                              onCheckedChange={field.onChange}
-                              data-testid="checkbox-newsletter"
-                            />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel>
-                              Subscribe to our newsletter for Clay automation tips and case studies
-                            </FormLabel>
-                          </div>
+                        <FormItem>
+                          <FormLabel>Preferred Contact Method *</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger data-testid="select-contact-method">
+                                <SelectValue placeholder="How would you prefer we contact you?" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="email">Email</SelectItem>
+                              <SelectItem value="phone">Phone Call</SelectItem>
+                              <SelectItem value="calendly">Schedule a Call</SelectItem>
+                              <SelectItem value="linkedin">LinkedIn Message</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
                         </FormItem>
                       )}
                     />
