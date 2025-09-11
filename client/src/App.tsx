@@ -9,6 +9,7 @@ import { initGA } from "./lib/analytics";
 import Index from "./pages/Index";
 import ServicesPage from "./pages/Services";
 import AboutPage from "./pages/About";
+import CaseStudiesPage from "./pages/CaseStudies";
 import ContactPage from "./pages/Contact";
 import BlogPage from "./pages/Blog";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/case-studies" element={<CaseStudiesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
