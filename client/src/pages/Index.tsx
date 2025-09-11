@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
@@ -12,6 +13,57 @@ import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Target, Zap, Search, Send, BarChart3, Users, Database, MessageSquare, CheckCircle, TrendingUp as TrendingUpIcon } from "lucide-react";
 
 const Index = () => {
+  // Set SEO meta tags
+  useEffect(() => {
+    // Set document title
+    document.title = "Clay Works of Art - B2B Lead Generation & GTM Engineering Experts";
+    
+    // Set meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Transform your B2B sales pipeline with precision-engineered lead generation solutions. Expert Clay automation, data enrichment, and GTM engineering services that deliver measurable results.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Transform your B2B sales pipeline with precision-engineered lead generation solutions. Expert Clay automation, data enrichment, and GTM engineering services that deliver measurable results.';
+      document.head.appendChild(meta);
+    }
+    
+    // Set Open Graph tags
+    const setOGTag = (property: string, content: string) => {
+      let ogTag = document.querySelector(`meta[property="${property}"]`);
+      if (ogTag) {
+        ogTag.setAttribute('content', content);
+      } else {
+        ogTag = document.createElement('meta');
+        ogTag.setAttribute('property', property);
+        ogTag.setAttribute('content', content);
+        document.head.appendChild(ogTag);
+      }
+    };
+    
+    setOGTag('og:title', 'Clay Works of Art - B2B Lead Generation & GTM Engineering Experts');
+    setOGTag('og:description', 'Transform your B2B sales pipeline with precision-engineered lead generation solutions. Expert Clay automation, data enrichment, and GTM engineering services that deliver measurable results.');
+    setOGTag('og:type', 'website');
+    setOGTag('og:url', window.location.origin + '/');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', window.location.origin + '/');
+    } else {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      canonical.setAttribute('href', window.location.origin + '/');
+      document.head.appendChild(canonical);
+    }
+    
+    // Cleanup function
+    return () => {
+      document.title = 'Clay Works of Art';
+    };
+  }, []);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',

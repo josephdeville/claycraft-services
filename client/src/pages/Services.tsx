@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Services from "@/components/sections/Services";
@@ -13,6 +14,57 @@ import { Link } from "react-router-dom";
 import { CheckCircle, Zap, Database, Target, TrendingUp, Users, ArrowRight } from "lucide-react";
 
 const ServicesPage = () => {
+  // Set SEO meta tags
+  useEffect(() => {
+    // Set document title
+    document.title = "Lead Generation Services - B2B GTM Engineering Solutions | Clay Works of Art";
+    
+    // Set meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $2,500/month.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $2,500/month.';
+      document.head.appendChild(meta);
+    }
+    
+    // Set Open Graph tags
+    const setOGTag = (property: string, content: string) => {
+      let ogTag = document.querySelector(`meta[property="${property}"]`);
+      if (ogTag) {
+        ogTag.setAttribute('content', content);
+      } else {
+        ogTag = document.createElement('meta');
+        ogTag.setAttribute('property', property);
+        ogTag.setAttribute('content', content);
+        document.head.appendChild(ogTag);
+      }
+    };
+    
+    setOGTag('og:title', 'Lead Generation Services - B2B GTM Engineering Solutions');
+    setOGTag('og:description', 'Transform your B2B sales pipeline with our precision-engineered lead generation services. Clay automation, data enrichment, and GTM solutions starting at $2,500/month.');
+    setOGTag('og:type', 'website');
+    setOGTag('og:url', window.location.origin + '/services');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', window.location.origin + '/services');
+    } else {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      canonical.setAttribute('href', window.location.origin + '/services');
+      document.head.appendChild(canonical);
+    }
+    
+    // Cleanup function
+    return () => {
+      document.title = 'Clay Works of Art';
+    };
+  }, []);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
