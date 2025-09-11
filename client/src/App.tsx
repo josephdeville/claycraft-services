@@ -8,6 +8,7 @@ import { queryClient } from "./lib/queryClient";
 import { initGA } from "./lib/analytics";
 import Index from "./pages/Index";
 import ServicesPage from "./pages/Services";
+import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import BlogPage from "./pages/Blog";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
