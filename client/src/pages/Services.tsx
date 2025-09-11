@@ -83,21 +83,21 @@ const ServicesPage = () => {
       title: "Lead Enrichment Workflows",
       description: "Automated data enrichment that turns basic contact info into comprehensive prospect profiles",
       features: ["50+ data sources integration", "Real-time enrichment", "Custom scoring models", "CRM synchronization"],
-      price: "Starting at $2,000/month",
+      price: "Starting at $1,000/month",
       icon: Database
     },
     {
       title: "Signal-Based Automation",
       description: "Trigger-based workflows that identify and act on buying signals automatically",
       features: ["Intent data monitoring", "Job change tracking", "Company growth signals", "Automated outreach"],
-      price: "Starting at $3,000/month", 
+      price: "Starting at $2,000/month", 
       icon: Target
     },
     {
       title: "Scale & Optimization",
       description: "Continuous optimization and scaling of your Clay automation infrastructure",
       features: ["Performance monitoring", "A/B testing setup", "Cost optimization", "Advanced integrations"],
-      price: "Starting at $5,000/month",
+      price: "Starting at $4,000/month",
       icon: TrendingUp
     }
   ];
