@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import clayWorksLogo from "@assets/clayworksofart-logo.png";
 
 const Footer = () => {
   const handleLinkClick = (label: string) => {
@@ -14,7 +15,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">Clay Works of Art</h3>
+            <div className="flex items-center">
+              <img 
+                src={clayWorksLogo} 
+                alt="Clay Works of Art" 
+                className="h-8 w-auto"
+                data-testid="footer-logo"
+              />
+            </div>
             <p className="text-slate-300 text-sm leading-relaxed">Startup anad IT Growth Hackers with advanced Clay Implementations, data enrichment, and GTM engineering.</p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-slate-300">

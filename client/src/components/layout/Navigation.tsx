@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import clayWorksLogo from "@assets/clayworksofart-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,10 +29,15 @@ const Navigation = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="text-xl font-bold text-white hover:text-orange-200 transition-colors"
+            className="flex items-center hover:opacity-80 transition-opacity"
             onClick={() => handleNavClick("logo")}
           >
-            Clay Works of Art
+            <img 
+              src={clayWorksLogo} 
+              alt="Clay Works of Art" 
+              className="h-8 md:h-10 w-auto"
+              data-testid="logo-image"
+            />
           </Link>
 
           {/* Desktop Navigation */}
