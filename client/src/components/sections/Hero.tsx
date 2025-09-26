@@ -11,8 +11,8 @@ const Hero = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // For now, use mailto - can be replaced with API later
-    const subject = encodeURIComponent('Free Lead Audit Request');
-    const body = encodeURIComponent(`Hi,\n\nFirst Name: ${firstName}\nEmail: ${email}\n\nI'm interested in booking a free lead audit to discover how Clay Works of Art can generate qualified leads for my business.`);
+    const subject = encodeURIComponent('Clay Strategy Session Request');
+    const body = encodeURIComponent(`Hi,\n\nFirst Name: ${firstName}\nEmail: ${email}\n\nI'm interested in booking a free Clay Strategy Session to discover how Clay Works of Art can generate qualified leads for my business.`);
     window.location.href = `mailto:hello@clayworksofart.com?subject=${subject}&body=${body}`;
   };
   return <section className="relative min-h-screen bg-black overflow-hidden">
@@ -22,7 +22,7 @@ const Hero = () => {
         <nav className="flex items-center justify-between mb-8">
           
           <Badge className="bg-orange-500 text-white hover:bg-orange-600">
-            🔥 FREE LEAD AUDIT 🔥
+            🔥 FREE CLAY STRATEGY SESSION 🔥
           </Badge>
         </nav>
 
@@ -51,7 +51,7 @@ const Hero = () => {
             </div>
             
             <Button type="submit" variant="hero" className="w-full h-12 text-base font-semibold bg-orange-500 hover:bg-orange-600 text-white border-orange-500" data-testid="button-book-audit">
-              Book Your Free Lead Audit →
+              Book Your Clay Strategy Session →
             </Button>
             
             <Button type="button" variant="outline" className="w-full h-12 text-base font-semibold border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white" data-testid="button-see-case-studies">
