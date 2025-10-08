@@ -8,6 +8,7 @@ import cursorLogo from "@/assets/logos/cursor-official.png";
 import apifyLogo from "@/assets/logos/apify-official.png";
 import commonroomLogo from "@/assets/logos/commonroom-official.png";
 import netlifyLogo from "@assets/netlify_1756711653418.png";
+import lovableLogo from "@/assets/logos/lovable-official.png";
 import replitLogo from "@assets/replit_1756711653418.png";
 import n8nLogo from "@/assets/logos/n8n-official.png";
 import oceanLogo from "@/assets/logos/ocean-official.png";
@@ -67,6 +68,11 @@ const ToolsSection = () => {
       name: "Netlify",
       description: "Web deployment & hosting",
       logo: netlifyLogo
+    },
+    {
+      name: "Lovable",
+      description: "AI web development",
+      logo: lovableLogo
     },
     {
       name: "Replit",
