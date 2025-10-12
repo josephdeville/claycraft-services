@@ -1,12 +1,28 @@
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, PlayCircle, PauseCircle } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import clayWorksLogo from "@assets/clayworksofart-logo.png";
+import { useState, useEffect } from "react";
 
 const Footer = () => {
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const storedPreference = localStorage.getItem('reduceMotion');
+    setIsReducedMotion(storedPreference === 'true');
+  }, []);
+
   const handleLinkClick = (label: string) => {
     trackEvent("footer_link_click", "footer", label);
+  };
+
+  const toggleReducedMotion = () => {
+    const newValue = !isReducedMotion;
+    setIsReducedMotion(newValue);
+    localStorage.setItem('reduceMotion', String(newValue));
+    window.dispatchEvent(new Event('storage'));
+    trackEvent("reduce_motion_toggle", "accessibility", newValue ? "enabled" : "disabled");
   };
 
   return (
@@ -152,9 +168,29 @@ const Footer = () => {
 
         <div className="border-t border-slate-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-slate-400">
-              © 2025 Clay Automation. All rights reserved.
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <p className="text-sm text-slate-400">
+                © 2025 Clay Automation. All rights reserved.
+              </p>
+              <button
+                onClick={toggleReducedMotion}
+                className="flex items-center gap-2 text-sm text-slate-400 hover:text-orange-400 transition-colors"
+                data-testid="button-reduce-motion"
+                aria-label={isReducedMotion ? "Enable animations" : "Reduce motion"}
+              >
+                {isReducedMotion ? (
+                  <>
+                    <PlayCircle className="h-4 w-4" />
+                    <span>Enable Animations</span>
+                  </>
+                ) : (
+                  <>
+                    <PauseCircle className="h-4 w-4" />
+                    <span>Reduce Motion</span>
+                  </>
+                )}
+              </button>
+            </div>
             <div className="flex space-x-6 text-sm text-slate-400">
               <Link 
                 to="/privacy" 

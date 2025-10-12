@@ -2,15 +2,39 @@ import { useEffect, useState } from 'react';
 
 const FloatingElements = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
 
   useEffect(() => {
+    // Check for user's motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const storedPreference = localStorage.getItem('reduceMotion');
+    
+    setIsReducedMotion(mediaQuery.matches || storedPreference === 'true');
+
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      if (!isReducedMotion) {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      }
+    };
+
+    const handleStorageChange = () => {
+      const newPreference = localStorage.getItem('reduceMotion');
+      setIsReducedMotion(newPreference === 'true');
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+    window.addEventListener('storage', handleStorageChange);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, [isReducedMotion]);
+
+  // Don't render animations if reduced motion is enabled
+  if (isReducedMotion) {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">

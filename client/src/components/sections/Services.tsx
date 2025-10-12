@@ -84,7 +84,7 @@ const Services = () => {
                     ⭐ Most Popular
                   </Badge>
                 )}
-                <CardHeader className="pb-4">
+                <CardHeader className={`pb-4 ${service.popular ? 'pt-12 md:pt-10' : ''}`}>
                   <div className="flex items-center gap-4">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-orange-500/10 text-orange-500">
                       <Icon className="h-6 w-6" />
