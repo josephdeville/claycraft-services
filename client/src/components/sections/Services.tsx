@@ -80,8 +80,8 @@ const Services = () => {
             return (
               <Card key={service.title} className={`relative overflow-hidden hover:shadow-lg hover:scale-105 transition-all duration-300 ${service.popular ? 'ring-2 ring-orange-500' : ''}`}>
                 {service.popular && (
-                  <Badge className="absolute top-4 right-4 bg-orange-500 text-white hover:bg-orange-600">
-                    Most Popular
+                  <Badge className="absolute -top-0 left-0 right-0 mx-auto w-full rounded-none bg-orange-500 text-white hover:bg-orange-600 text-base md:text-sm py-2 md:py-1 font-semibold justify-center">
+                    ⭐ Most Popular
                   </Badge>
                 )}
                 <CardHeader className="pb-4">

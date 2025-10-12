@@ -149,26 +149,39 @@ const Testimonials = () => {
             </div>
           </div>
           
-          {/* Carousel Controls */}
+          {/* Carousel Controls - Improved Visibility */}
           <div className="flex items-center justify-between mt-6">
-            <Button variant="outline" size="sm" onClick={prevTestimonial} className="border-orange-500 text-orange-500 hover:bg-orange-50">
-              <ChevronLeft className="h-4 w-4" />
+            <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={prevTestimonial} 
+              className="bg-orange-500 text-white hover:bg-orange-600 border-none w-12 h-12 md:w-14 md:h-14 rounded-full p-0 shadow-lg hover:scale-110 transition-transform"
+              data-testid="button-testimonial-prev"
+            >
+              <ChevronLeft className="h-6 w-6 md:h-7 md:w-7" />
             </Button>
             
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentTestimonial ? 'bg-orange-500' : 'bg-gray-600'
+                  className={`w-4 h-4 rounded-full transition-all ${
+                    index === currentTestimonial ? 'bg-orange-500 scale-125' : 'bg-gray-600 hover:bg-gray-500'
                   }`}
                   onClick={() => setCurrentTestimonial(index)}
+                  data-testid={`button-testimonial-dot-${index}`}
                 />
               ))}
             </div>
             
-            <Button variant="outline" size="sm" onClick={nextTestimonial} className="border-orange-500 text-orange-500 hover:bg-orange-50">
-              <ChevronRight className="h-4 w-4" />
+            <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={nextTestimonial} 
+              className="bg-orange-500 text-white hover:bg-orange-600 border-none w-12 h-12 md:w-14 md:h-14 rounded-full p-0 shadow-lg hover:scale-110 transition-transform"
+              data-testid="button-testimonial-next"
+            >
+              <ChevronRight className="h-6 w-6 md:h-7 md:w-7" />
             </Button>
           </div>
         </div>
