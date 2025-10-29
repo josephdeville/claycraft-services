@@ -19,7 +19,7 @@ const Testimonials = () => {
       rating: 5
     },
     {
-      quote: "From 50 to 500+ qualified leads per month. The ROI on Clay automation was immediate and scalable.",
+      quote: "Scaled to qualified prospects per month. The ROI on Clay automation was immediate and scalable.",
       name: "Marcus Johnson", 
       title: "Head of Sales, DataScale",
       result: "10x Lead Volume",
