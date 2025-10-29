@@ -29,8 +29,7 @@ const Hero = () => {
         {/* Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-in slide-in-from-bottom-8 duration-1000">
-            <span className="text-orange-500 hover:text-orange-400 transition-colors cursor-pointer">Clay Works of Art</span>: Precision-Crafted{" "}
-            <span className="bg-gradient-brand bg-clip-text text-transparent hover:scale-105 transition-transform inline-block">B2B Lead Generation</span>
+            Scale Your Business with <span className="text-orange-500 hover:text-orange-400 transition-colors cursor-pointer">Clay Works of Art</span> & <span className="bg-gradient-brand bg-clip-text text-transparent hover:scale-105 transition-transform inline-block">Data Intelligence</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-200">
