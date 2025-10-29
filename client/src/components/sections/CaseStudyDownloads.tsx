@@ -68,7 +68,7 @@ const CaseStudyDownloads = () => {
         "85% reduction in manual work"
       ],
       icon: TrendingUp,
-      downloadCount: "2,100+ downloads"
+      downloadCount: "qualified prospects downloads"
     },
     {
       id: "agency-automation",
@@ -82,7 +82,7 @@ const CaseStudyDownloads = () => {
         "3-month ROI payback"
       ],
       icon: Users,
-      downloadCount: "1,800+ downloads"
+      downloadCount: "qualified prospects downloads"
     },
     {
       id: "ecommerce-personalization",
@@ -96,7 +96,7 @@ const CaseStudyDownloads = () => {
         "$1.2M additional revenue"
       ],
       icon: Target,
-      downloadCount: "1,500+ downloads"
+      downloadCount: "qualified prospects downloads"
     }
   ];
 

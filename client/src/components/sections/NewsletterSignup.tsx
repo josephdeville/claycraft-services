@@ -112,7 +112,7 @@ const NewsletterSignup = () => {
               Master <span className="text-orange-500">Clay Works of Art</span> Weekly
             </h2>
             <p className="text-lg text-muted-foreground">
-              Join 2,500+ growth professionals getting actionable Clay strategies, case studies, and templates delivered every Tuesday.
+              Join qualified prospects growth professionals getting actionable Clay strategies, case studies, and templates delivered every Tuesday.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ const NewsletterSignup = () => {
                   <Mail className="h-12 w-12 text-orange-500 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Start Learning Today</h3>
                   <p className="text-sm text-muted-foreground">
-                    No spam, unsubscribe anytime. Trusted by growth teams at 500+ companies.
+                    No spam, unsubscribe anytime. Trusted by growth teams at qualified prospects companies.
                   </p>
                 </div>
 

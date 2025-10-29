@@ -5,7 +5,7 @@ import { Star, TrendingUp, Users, Award, CheckCircle } from "lucide-react";
 const SocialProof = () => {
   const stats = [
     {
-      number: "500+",
+      number: "qualified prospects",
       label: "Clay Automations Built",
       icon: TrendingUp
     },

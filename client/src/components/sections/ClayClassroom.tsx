@@ -70,7 +70,7 @@ const ClayClassroom = () => {
             Master <span className="text-orange-500">Clay Works of Art</span> with Expert Training
           </h2>
           <p className="text-lg text-muted-foreground">
-            From beginner fundamentals to advanced enterprise workflows - learn from the experts who've built 500+ Clay automations
+            From beginner fundamentals to advanced enterprise workflows - learn from the experts who've built qualified prospects Clay automations
           </p>
         </div>
 
@@ -148,7 +148,7 @@ const ClayClassroom = () => {
             Ready to Transform Your Team's Clay Skills?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Join 500+ professionals who've accelerated their careers with Clay expertise. Start with a free consultation to find the right training path.
+            Join qualified prospects professionals who've accelerated their careers with Clay expertise. Start with a free consultation to find the right training path.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg">
