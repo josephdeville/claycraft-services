@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-            We engineer data-driven campaigns that generate <CounterAnimation target={30} className="text-orange-500 font-semibold" />-<CounterAnimation target={50} className="text-orange-500 font-semibold" /> qualified leads per month for B2B companies
+            We engineer data-driven campaigns that generate <span className="text-orange-500 font-semibold">high intent</span> qualified leads for B2B companies
           </p>
           
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-300">
