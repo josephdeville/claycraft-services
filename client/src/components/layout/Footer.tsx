@@ -146,7 +146,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-white">Get Started</h4>
             <p className="text-sm text-slate-300">
-              Ready to scale your lead generation?
+              Ready to build your GTM experimentation engine?
             </p>
             <div className="space-y-3">
               <Link 
@@ -155,11 +155,11 @@ const Footer = () => {
                 onClick={() => handleLinkClick("footer_contact")}
                 data-testid="link-footer-contact"
               >
-                Schedule Consultation
+                Book Experiment Mapping Call
               </Link>
               <div className="flex space-x-2">
                 <Badge variant="secondary" className="text-xs">
-                  Free Strategy Session
+                  Free Experiment Mapping Call
                 </Badge>
               </div>
             </div>

@@ -109,10 +109,10 @@ const CustomAIAgents = () => {
               Ready to Build Your Custom AI Agent?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Schedule a strategy session to discuss your specific automation needs and get a custom AI agent roadmap.
+              Book an Experiment Mapping Call to discuss your specific automation needs and get a custom AI agent roadmap.
             </p>
             <Button variant="hero" size="lg">
-              Book Strategy Session
+              Book Experiment Mapping Call
             </Button>
           </div>
         </div>

@@ -1,52 +1,58 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, TrendingUp, Target, Users, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, Zap, Target, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import CounterAnimation from "@/components/interactive/CounterAnimation";
 import ProgressBar from "@/components/interactive/ProgressBar";
+import michaelSeymourImg from "@assets/MichaelProfilepic_1765680153740.jpeg";
+import hunterDeskinImg from "@assets/Hunterprofilepic_1765680153740.jpeg";
+import andyCrestodinaImg from "@assets/AndyProfilePic_1765680153740.jpeg";
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   
   const testimonials = [
     {
-      quote: "Clay automation increased our lead generation by 400% in just 60 days. The signal stacking approach is game-changing.",
-      name: "Sarah Chen",
-      title: "VP of Growth, TechFlow",
-      result: "400% Lead Increase",
-      logo: "TF",
+      quote: "ClayWorks of Art built us a GTM intelligence system that monitors engineering standards changes and component obsolescence patterns across our 6,000+ customers.",
+      name: "Michael Seymour",
+      title: "Demand Gen Manager, Accuris",
+      company: "Enterprise, $500M ARR",
+      result: "GTM Intelligence System",
+      image: michaelSeymourImg,
       rating: 5
     },
     {
-      quote: "Scaled to qualified prospects per month. The ROI on Clay automation was immediate and scalable.",
-      name: "Marcus Johnson", 
-      title: "Head of Sales, DataScale",
-      result: "10x Lead Volume",
-      logo: "DS",
+      quote: "We sell outbound prospecting services but our own pipeline generation was broken—classic cobbler's shoes situation. ClayWorks of Art connected our fragmented stack into an intelligence system that predicts which B2B SaaS companies are restructuring their go-to-market teams.",
+      name: "Hunter Deskin", 
+      title: "Founder, RevCentric",
+      company: "Bootstrapped, $20M+ client pipeline",
+      result: "Pipeline Intelligence",
+      image: hunterDeskinImg,
       rating: 5
     },
     {
-      quote: "Saved 30 hours per week on manual prospecting. Now our team focuses on closing, not searching.",
-      name: "Lisa Park",
-      title: "Sales Director, GrowthLab",
-      result: "30 Hours Saved Weekly",
-      logo: "GL",
+      quote: "We thought we needed more leads for our web design services. ClayWorks of Art showed us we needed better intelligence. Their system monitors hiring patterns, tech stack migrations, and website redesign signals across our target accounts.",
+      name: "Andy Crestodina",
+      title: "Co-Founder & CMO, Orbit Media",
+      company: "B Corp, 50-person agency",
+      result: "Signal-Based Targeting",
+      image: andyCrestodinaImg,
       rating: 5
     }
   ];
 
   const stats = [
-    { icon: TrendingUp, label: "Average Lead Increase", value: "300%", target: 300 },
-    { icon: Target, label: "Time Saved Per Week", value: "25+ Hours", target: 25 },
-    { icon: Users, label: "Happy Clients", value: "150+", target: 150 }
+    { icon: Zap, label: "Experiments Shipped Weekly", value: "12+", target: 12 },
+    { icon: Target, label: "Hypothesis Testing Speed", value: "50x", target: 50 },
+    { icon: Rocket, label: "Campaign Velocity Increase", value: "10x", target: 10 }
   ];
 
   const progressBars = [
-    { label: "Lead Generation Improvement", percentage: 85 },
-    { label: "Time Savings", percentage: 92 },
-    { label: "Client Satisfaction", percentage: 98 },
-    { label: "ROI Achievement", percentage: 89 }
+    { label: "Experimentation Velocity", percentage: 92 },
+    { label: "Methodology Adoption", percentage: 88 },
+    { label: "Client Independence", percentage: 95 },
+    { label: "GTM Intelligence Coverage", percentage: 90 }
   ];
 
   // Auto-rotate testimonials
@@ -69,12 +75,12 @@ const Testimonials = () => {
     <section className="py-16 md:py-24 bg-black">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <Badge className="mb-4">Client Results</Badge>
+          <Badge className="mb-4">Client Transformations</Badge>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-            Real Results from Clay Automation
+            GTM Intelligence in Action
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            See how our clients transformed their lead generation with data-driven Clay workflows
+            See how our clients built experimentation systems that transformed their go-to-market velocity
           </p>
         </div>
 
@@ -130,12 +136,15 @@ const Testimonials = () => {
                       </blockquote>
                       
                       <div className="flex items-center justify-center space-x-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold">
-                          {testimonial.logo}
-                        </div>
+                        <img 
+                          src={testimonial.image} 
+                          alt={testimonial.name}
+                          className="w-14 h-14 rounded-full object-cover border-2 border-orange-500"
+                        />
                         <div className="text-left">
                           <div className="font-semibold">{testimonial.name}</div>
                           <div className="text-sm text-muted-foreground">{testimonial.title}</div>
+                          <div className="text-xs text-orange-500">{testimonial.company}</div>
                         </div>
                       </div>
                       
@@ -203,9 +212,11 @@ const Testimonials = () => {
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center text-white font-semibold text-sm">
-                      {testimonial.logo}
-                    </div>
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-10 h-10 rounded-full object-cover border-2 border-orange-500"
+                    />
                     <div>
                       <div className="font-semibold text-sm">{testimonial.name}</div>
                       <div className="text-xs text-muted-foreground">{testimonial.title}</div>

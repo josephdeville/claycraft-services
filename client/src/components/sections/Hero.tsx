@@ -11,8 +11,8 @@ const Hero = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // For now, use mailto - can be replaced with API later
-    const subject = encodeURIComponent('Clay Strategy Session Request');
-    const body = encodeURIComponent(`Hi,\n\nFirst Name: ${firstName}\nEmail: ${email}\n\nI'm interested in booking a free Clay Strategy Session to discover how Clay Works of Art can generate qualified leads for my business.`);
+    const subject = encodeURIComponent('Experiment Mapping Call Request');
+    const body = encodeURIComponent(`Hi,\n\nFirst Name: ${firstName}\nEmail: ${email}\n\nI'm interested in booking an Experiment Mapping Call to discover how ClayWorks of Art can help us build a rapid experimentation system.`);
     window.location.href = `mailto:hello@clayworksofart.com?subject=${subject}&body=${body}`;
   };
   return <section className="relative min-h-screen bg-black overflow-hidden">
@@ -22,22 +22,22 @@ const Hero = () => {
         <nav className="flex items-center justify-between mb-8">
           
           <Badge className="bg-orange-500 text-white hover:bg-orange-600">
-            🔥 FREE CLAY STRATEGY SESSION 🔥
+            🔥 FREE EXPERIMENT MAPPING CALL 🔥
           </Badge>
         </nav>
 
         {/* Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-in slide-in-from-bottom-8 duration-1000">
-            Scale Your Business with <span className="text-orange-500 hover:text-orange-400 transition-colors cursor-pointer">Clay Works of Art</span> & <span className="bg-gradient-brand bg-clip-text text-transparent hover:scale-105 transition-transform inline-block">Data Intelligence</span>
+            Build Your <span className="text-orange-500 hover:text-orange-400 transition-colors cursor-pointer">GTM Experimentation</span> <span className="bg-gradient-brand bg-clip-text text-transparent hover:scale-105 transition-transform inline-block">Engine</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-            We engineer data-driven campaigns that generate <span className="text-orange-500 font-semibold">high intent</span> qualified leads for B2B companies
+            Test <span className="text-orange-500 font-semibold">50 hypotheses in 90 days</span>. Ship campaigns weekly, not quarterly.
           </p>
           
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-300">
-            Through advanced GTM engineering and AI-powered automation, we transform your sales pipeline with prospects who are ready to buy.
+            We build rapid experimentation systems for B2B SaaS teams. You keep the methodology—and the velocity—forever.
           </p>
 
           
@@ -50,7 +50,7 @@ const Hero = () => {
             </div>
             
             <Button type="submit" variant="hero" className="w-full h-12 text-base font-semibold bg-orange-500 hover:bg-orange-600 text-white border-orange-500" data-testid="button-book-audit">
-              Book Your Clay Strategy Session →
+              Book Your Experiment Mapping Call →
             </Button>
             
             <Button type="button" variant="outline" className="w-full h-12 text-base font-semibold border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white" data-testid="button-see-case-studies">
@@ -78,8 +78,8 @@ const Hero = () => {
           <div className="bg-card border rounded-lg p-4 max-w-md mx-auto">
             <div className="flex items-center justify-center">
               <div className="text-center">
-                <div className="text-lg font-bold">150+</div>
-                <div className="text-xs text-muted-foreground">B2B companies served with 85% average email open rate</div>
+                <div className="text-lg font-bold">12+ experiments/week</div>
+                <div className="text-xs text-muted-foreground">Average velocity for teams using our methodology</div>
               </div>
             </div>
           </div>

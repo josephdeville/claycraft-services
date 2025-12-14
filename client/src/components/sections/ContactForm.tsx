@@ -87,9 +87,9 @@ const ContactForm = () => {
                   <strong>What happens next:</strong>
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Lead generation audit and gap analysis</li>
-                  <li>• Custom strategy session scheduling</li>
-                  <li>• Personalized recommendations and next steps</li>
+                  <li>• GTM experimentation audit and gap analysis</li>
+                  <li>• Experiment Mapping Call scheduling</li>
+                  <li>• Personalized velocity roadmap and next steps</li>
                 </ul>
               </div>
             </CardContent>
@@ -132,11 +132,11 @@ const ContactForm = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Calendar className="h-5 w-5 text-orange-500" />
-                  <span>Book a Call</span>
+                  <span>Experiment Mapping Call</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Schedule a free 30-min strategy session</p>
+                <p className="text-muted-foreground">Schedule a free 30-min experiment mapping session</p>
                 <Button asChild variant="outline" className="mt-3 border-orange-500 text-orange-500 hover:bg-orange-50" data-testid="button-book-call">
                   <Link to="/contact#calendar">Schedule Now</Link>
                 </Button>

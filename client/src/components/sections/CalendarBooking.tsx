@@ -20,16 +20,16 @@ const CalendarBooking = () => {
 
   const meetingTypes = [
     {
-      title: "Strategy Session",
+      title: "Experiment Mapping Call",
       duration: "30 minutes",
-      description: "Free consultation to discuss your Clay automation needs",
+      description: "Free consultation to map your first 50 GTM experiments and build your velocity roadmap",
       type: "strategy",
       icon: User
     },
     {
       title: "Technical Deep Dive",
       duration: "60 minutes",
-      description: "Detailed technical review of your current setup and optimization opportunities",
+      description: "Detailed review of your current GTM stack and experimentation infrastructure",
       type: "technical",
       icon: Building
     }
@@ -38,7 +38,7 @@ const CalendarBooking = () => {
   const handleBooking = (meetingType: string) => {
     trackEvent('calendar_booking', 'engagement', meetingType);
     // Integration with Reclaim or other calendar system would go here
-    window.open('https://calendly.com/clayworksofart/strategy-session', '_blank');
+    window.open('https://calendly.com/clayworksofart/experiment-mapping-call', '_blank');
   };
 
   return (
@@ -47,10 +47,10 @@ const CalendarBooking = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <Badge className="mb-4">Schedule a Call</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Book Your <span className="text-orange-500">Free Strategy Session</span>
+            Book Your <span className="text-orange-500">Experiment Mapping Call</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Get personalized recommendations for your Clay automation project. No sales pitch - just actionable insights.
+            Map your first 50 GTM experiments and get a velocity roadmap. No sales pitch - just actionable insights.
           </p>
         </div>
 

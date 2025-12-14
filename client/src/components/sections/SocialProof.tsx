@@ -1,62 +1,62 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, TrendingUp, Users, Award, CheckCircle } from "lucide-react";
+import { Zap, Target, Rocket, Award, CheckCircle } from "lucide-react";
 
 const SocialProof = () => {
   const stats = [
     {
-      number: "qualified prospects",
-      label: "Clay Automations Built",
-      icon: TrendingUp
+      number: "12+",
+      label: "Experiments/Week",
+      icon: Zap
     },
     {
-      number: "2.5M+",
-      label: "Leads Generated",
-      icon: Users
+      number: "50+",
+      label: "Hypotheses Tested/Quarter",
+      icon: Target
     },
     {
-      number: "150+",
-      label: "Happy Clients",
+      number: "10x",
+      label: "Campaign Velocity Increase",
+      icon: Rocket
+    },
+    {
+      number: "95%",
+      label: "Client Independence Rate",
       icon: Award
-    },
-    {
-      number: "98%",
-      label: "Client Satisfaction",
-      icon: Star
     }
   ];
 
   const companies = [
-    "TechCorp", "GrowthLabs", "SalesForce Pro", "DataDriven Inc", 
-    "AutomateNow", "LeadGen Solutions", "ScaleUp Ventures", "ClayMasters"
+    "Accuris", "RevCentric", "Orbit Media", "B2B SaaS Teams", 
+    "Growth-Stage Startups", "Marketing Agencies", "Enterprise GTM", "Revenue Teams"
   ];
 
   const recentWins = [
     {
-      company: "SaaS Startup",
-      result: "Generated 1,200 qualified leads in first month",
-      metric: "+340% lead increase",
-      timeAgo: "2 days ago"
+      company: "Enterprise SaaS",
+      result: "Built GTM intelligence system monitoring 6,000+ accounts",
+      metric: "Signal-driven targeting",
+      timeAgo: "This month"
     },
     {
-      company: "Marketing Agency", 
-      result: "Automated entire prospect research process",
-      metric: "20 hours saved per week",
-      timeAgo: "1 week ago"
+      company: "Outbound Agency", 
+      result: "Connected fragmented stack into unified intelligence",
+      metric: "Predictive prospecting",
+      timeAgo: "Last month"
     },
     {
-      company: "E-commerce Brand",
-      result: "Built custom AI sales assistant",
-      metric: "+85% response rates",
-      timeAgo: "2 weeks ago"
+      company: "Digital Agency",
+      result: "Replaced lead volume focus with buyer signal intelligence",
+      metric: "Quality over quantity",
+      timeAgo: "Last quarter"
     }
   ];
 
   const certifications = [
     "Clay Certified Expert",
-    "Google Analytics Certified",
-    "HubSpot Marketing Certified", 
-    "Salesforce Certified"
+    "GTM Engineering Specialist",
+    "HubSpot Certified", 
+    "Signal-Driven Methodology"
   ];
 
   return (
@@ -64,12 +64,12 @@ const SocialProof = () => {
       <div className="container mx-auto px-4 md:px-6 container-mobile">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge className="mb-4">Trusted Results</Badge>
+          <Badge className="mb-4">Velocity Metrics</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Proven Track Record of <span className="text-orange-500">Success</span>
+            Experimentation <span className="text-orange-500">Results</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Join hundreds of companies that have transformed their lead generation with our Clay automation expertise.
+            Teams using our methodology ship campaigns weekly and become self-sufficient in 90 days or less.
           </p>
         </div>
 
@@ -94,7 +94,7 @@ const SocialProof = () => {
 
         {/* Recent Client Wins */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Recent Client Wins</h3>
+          <h3 className="text-2xl font-bold text-center mb-8">Recent Transformations</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto grid-responsive">
             {recentWins.map((win, index) => (
               <Card key={index} className="border-green-200 bg-green-50/50">

@@ -178,7 +178,7 @@ const ServicesPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg px-8 bg-orange-500 hover:bg-orange-600 text-white">
                 <Link to="/contact" data-testid="button-services-contact">
-                  Get Free Strategy Session <ArrowRight className="ml-2 h-5 w-5" />
+                  Book Experiment Mapping Call <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg px-8 border-orange-500 text-orange-500 hover:bg-orange-50">
@@ -250,13 +250,13 @@ const ServicesPage = () => {
       {/* CTA Section */}
       <section className="py-8 md:py-16 bg-gradient-to-r from-orange-500/10 to-orange-600/10">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-semibold mb-4">Ready to Scale Your Clay Operations?</h2>
+          <h2 className="text-3xl font-semibold mb-4">Ready to Build Your Experimentation Engine?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Book a free strategy call to discuss your Clay automation needs and get a custom implementation plan.
+            Book an Experiment Mapping Call to map your first 50 GTM experiments and get a velocity roadmap.
           </p>
           <Button asChild size="lg">
             <Link to="/contact" data-testid="button-services-cta">
-              Schedule Free Consultation
+              Book Experiment Mapping Call
             </Link>
           </Button>
         </div>

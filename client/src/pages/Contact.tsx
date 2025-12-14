@@ -37,16 +37,16 @@ const ContactPage = () => {
   // Set SEO meta tags
   useEffect(() => {
     // Set document title
-    document.title = "Contact Clay Works of Art - Lead Generation Strategy Call | Clay Works of Art";
+    document.title = "Contact Clay Works of Art - Experiment Mapping Call | Clay Works of Art";
     
     // Set meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Schedule a free strategy call to discover how Clay Works of Art can transform your sales pipeline with our GTM engineering solutions.');
+      metaDescription.setAttribute('content', 'Book a free Experiment Mapping Call to map your first 50 GTM experiments and build your velocity roadmap with Clay Works of Art.');
     } else {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Schedule a free strategy call to discover how Clay Works of Art can transform your sales pipeline with our GTM engineering solutions.';
+      meta.content = 'Book a free Experiment Mapping Call to map your first 50 GTM experiments and build your velocity roadmap with Clay Works of Art.';
       document.head.appendChild(meta);
     }
     
@@ -63,8 +63,8 @@ const ContactPage = () => {
       }
     };
     
-    setOGTag('og:title', 'Contact Clay Works of Art - Lead Generation Strategy Call');
-    setOGTag('og:description', 'Schedule a free strategy call to discover how Clay Works of Art can transform your sales pipeline with our GTM engineering solutions.');
+    setOGTag('og:title', 'Contact Clay Works of Art - Experiment Mapping Call');
+    setOGTag('og:description', 'Book a free Experiment Mapping Call to map your first 50 GTM experiments and build your velocity roadmap with Clay Works of Art.');
     setOGTag('og:type', 'website');
     setOGTag('og:url', window.location.origin + '/contact');
     
@@ -119,7 +119,7 @@ const ContactPage = () => {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contact Clay Works of Art',
-    description: 'Get in touch with our Clay Works of Art experts for a free strategy session.',
+    description: 'Get in touch with our Clay Works of Art experts for a free Experiment Mapping Call.',
     url: '/contact'
   };
 
@@ -136,8 +136,8 @@ const ContactPage = () => {
                 Let's Engineer Your <span className="text-orange-500">Lead Generation Success</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Schedule a free strategy call to discover how we can transform your sales pipeline
-                with our precision-crafted GTM engineering solutions.
+                Schedule a free Experiment Mapping Call to map your first 50 GTM experiments
+                and build your velocity roadmap.
               </p>
             </div>
 

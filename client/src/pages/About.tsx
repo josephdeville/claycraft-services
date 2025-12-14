@@ -229,7 +229,7 @@ const About = () => {
               <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
                 <Link to="/contact" data-testid="button-about-contact">
                   <Mail className="mr-2 h-5 w-5" />
-                  Start Your Free Audit
+                  Book Experiment Mapping Call
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white">

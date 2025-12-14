@@ -281,14 +281,14 @@ const CaseStudies = () => {
               Ready to Become Our Next Success Story?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Book a free strategy call to discover how we can generate 30-50 qualified leads per month 
-              for your business with our proven GTM engineering approach.
+              Book a free Experiment Mapping Call to map your first 50 GTM experiments
+              and build your velocity roadmap.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
                 <Link to="/contact" data-testid="button-case-studies-contact">
                   <Mail className="mr-2 h-5 w-5" />
-                  Book Your Free Strategy Call
+                  Book Experiment Mapping Call
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white">
