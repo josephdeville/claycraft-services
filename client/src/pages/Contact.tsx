@@ -89,7 +89,7 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: "Email Us",
-      info: "hello@clayworksofart.com",
+      info: "joe.deville@clayworksofart.com",
       description: "We typically respond within 2 hours"
     },
     {

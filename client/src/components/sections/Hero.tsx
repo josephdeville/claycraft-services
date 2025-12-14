@@ -13,7 +13,7 @@ const Hero = () => {
     // For now, use mailto - can be replaced with API later
     const subject = encodeURIComponent('Experiment Mapping Call Request');
     const body = encodeURIComponent(`Hi,\n\nFirst Name: ${firstName}\nEmail: ${email}\n\nI'm interested in booking an Experiment Mapping Call to discover how ClayWorks of Art can help us build a rapid experimentation system.`);
-    window.location.href = `mailto:hello@clayworksofart.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:joe.deville@clayworksofart.com?subject=${subject}&body=${body}`;
   };
   return <section className="relative min-h-screen bg-black overflow-hidden">
     <FloatingElements />

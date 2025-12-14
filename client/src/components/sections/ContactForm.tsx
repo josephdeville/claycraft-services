@@ -123,7 +123,7 @@ const ContactForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">hello@clayworksofart.com</p>
+                <p className="text-muted-foreground">joe.deville@clayworksofart.com</p>
                 <p className="text-sm text-muted-foreground mt-2">Response within 24 hours</p>
               </CardContent>
             </Card>
