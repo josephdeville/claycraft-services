@@ -89,10 +89,10 @@ const Index = () => {
       icon: Send,
       title: "Automated Outreach Campaigns",
       features: [
-        "Hyper-personalized messaging at scale",
-        "Multi-channel sequences (email + LinkedIn)",
-        "A/B tested subject lines and content",
-        "Intelligent follow-up automation"
+        "Personalized messaging at scale",
+        "Email + LinkedIn sequences",
+        "A/B tested subject lines",
+        "Smart follow-up automation"
       ]
     },
     {
