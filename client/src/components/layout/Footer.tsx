@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, PlayCircle, PauseCircle } from "lucide-react";
+import { Mail, MapPin, PlayCircle, PauseCircle } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import clayWorksLogo from "@assets/clayworksofart-logo.png";
 import { useState, useEffect } from "react";
@@ -44,10 +44,6 @@ const Footer = () => {
               <div className="flex items-center space-x-2 text-sm text-slate-300">
                 <Mail className="h-4 w-4" />
                 <span className="font-medium text-[14px]">info@clayworksofart.com</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-slate-300">
-                <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-CLAY</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-slate-300">
                 <MapPin className="h-4 w-4" />
