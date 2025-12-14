@@ -39,7 +39,7 @@ const Footer = () => {
                 data-testid="footer-logo"
               />
             </div>
-            <p className="text-slate-300 text-sm leading-relaxed">Startup anad IT Growth Hackers with advanced Clay Implementations, data enrichment, and GTM engineering.</p>
+            <p className="text-slate-300 text-sm leading-relaxed">Growth Hackers with advanced Clay implementations, CRM cleanup, and GTM Engineering.</p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-slate-300">
                 <Mail className="h-4 w-4" />
