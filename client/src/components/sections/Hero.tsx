@@ -37,7 +37,7 @@ const Hero = () => {
           </p>
           
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-300">
-            We build rapid experimentation systems for B2B SaaS teams. You keep the methodology—and the velocity—forever.
+            We build rapid experimentation systems for B2B SaaS teams. You keep the methodology and the velocity forever.
           </p>
 
           
