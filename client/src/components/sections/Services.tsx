@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Zap, Rocket, RefreshCw } from "lucide-react";
+import { Link } from "wouter";
 
 const Services = () => {
   const services = [
@@ -94,11 +95,11 @@ const Services = () => {
                       ))}
                     </ul>
                   </div>
-                  <Button 
+                  <Button asChild
                     className="w-full mt-6 bg-orange-500 hover:bg-orange-600 text-white" 
                     data-testid={`button-contact-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                   >
-                    Book Your Experiment Mapping Call
+                    <Link href="/contact">Book Your Experiment Mapping Call</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -115,8 +116,8 @@ const Services = () => {
             Book an Experiment Mapping Call to discover which sprint is right for your team's velocity goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white" data-testid="button-schedule-audit">
-              Book Your Experiment Mapping Call
+            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white" data-testid="button-schedule-audit">
+              <Link href="/contact">Book Your Experiment Mapping Call</Link>
             </Button>
           </div>
         </div>

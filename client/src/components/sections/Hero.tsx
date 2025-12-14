@@ -1,10 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Play, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { useState } from "react";
-import CounterAnimation from "@/components/interactive/CounterAnimation";
 import FloatingElements from "@/components/interactive/FloatingElements";
+import { Link } from "wouter";
 const Hero = () => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -53,8 +53,8 @@ const Hero = () => {
               Book Your Experiment Mapping Call →
             </Button>
             
-            <Button type="button" variant="outline" className="w-full h-12 text-base font-semibold border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white" data-testid="button-see-case-studies">
-              See Our Case Studies
+            <Button asChild type="button" variant="outline" className="w-full h-12 text-base font-semibold border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white" data-testid="button-see-case-studies">
+              <Link href="/case-studies">See Our Case Studies</Link>
             </Button>
             
             <div className="space-y-2 text-sm text-muted-foreground">

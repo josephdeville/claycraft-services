@@ -12,6 +12,7 @@ import { trackEvent } from "@/lib/analytics";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { Link } from "wouter";
 
 const downloadSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -274,8 +275,8 @@ const CaseStudyDownloads = () => {
             <p className="text-muted-foreground mb-6">
               Subscribe to our newsletter and get instant access to all case studies plus exclusive Clay templates and workflows.
             </p>
-            <Button size="lg" data-testid="button-get-all-case-studies">
-              Get Complete Case Study Bundle
+            <Button asChild size="lg" data-testid="button-get-all-case-studies">
+              <Link href="/contact">Get Complete Case Study Bundle</Link>
             </Button>
           </CardContent>
         </Card>

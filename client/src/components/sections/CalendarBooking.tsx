@@ -191,8 +191,8 @@ const CalendarBooking = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     Send us your questions and we'll respond within 4 hours.
                   </p>
-                  <Button variant="outline" data-testid="button-email-instead">
-                    Email Us Instead
+                  <Button asChild variant="outline" data-testid="button-email-instead">
+                    <a href="mailto:joe.deville@clayworksofart.com?subject=Experiment%20Mapping%20Call%20Inquiry">Email Us Instead</a>
                   </Button>
                 </div>
               </CardContent>
