@@ -178,11 +178,11 @@ const Index = () => {
                       <Icon className="h-8 w-8 group-hover:scale-110 transition-transform" />
                     </div>
                     <h3 className="font-semibold text-lg group-hover:text-orange-500 transition-colors mb-3">{title}</h3>
-                    <ul className="text-sm text-muted-foreground space-y-2">
+                    <ul className="text-sm text-muted-foreground space-y-2 text-left inline-block">
                       {features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          {feature}
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
