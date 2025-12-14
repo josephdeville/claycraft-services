@@ -5,7 +5,7 @@ import NewsletterSignup from "@/components/sections/NewsletterSignup";
 import CalendarBooking from "@/components/sections/CalendarBooking";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, HelpCircle, ChevronDown } from "lucide-react";
+import { Mail, Linkedin, HelpCircle, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState, useEffect } from "react";
 
@@ -93,10 +93,11 @@ const ContactPage = () => {
       description: "We typically respond within 2 hours"
     },
     {
-      icon: Phone,
-      title: "Call Us",
-      info: "(555) 123-4567",
-      description: "Mon-Fri 9am-6pm PST"
+      icon: Linkedin,
+      title: "LinkedIn",
+      info: "Connect with us",
+      description: "linkedin.com/company/clayworksofart",
+      link: "https://www.linkedin.com/company/clayworksofart/about/"
     }
   ];
 
@@ -143,20 +144,27 @@ const ContactPage = () => {
 
             {/* Contact Info Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {contactInfo.map((item, index) => (
-                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow border-orange-200">
-                  <CardContent className="space-y-4 p-0">
-                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 mx-auto">
-                      <item.icon className="h-8 w-8" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">{item.title}</h3>
-                      <p className="text-orange-600 font-medium">{item.info}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              {contactInfo.map((item, index) => {
+                const cardContent = (
+                  <Card key={index} className={`text-center p-6 hover:shadow-lg transition-shadow border-orange-200 ${item.link ? 'cursor-pointer' : ''}`}>
+                    <CardContent className="space-y-4 p-0">
+                      <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 mx-auto">
+                        <item.icon className="h-8 w-8" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg">{item.title}</h3>
+                        <p className="text-orange-600 font-medium">{item.info}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+                return item.link ? (
+                  <a key={index} href={item.link} target="_blank" rel="noopener noreferrer">
+                    {cardContent}
+                  </a>
+                ) : cardContent;
+              })}
             </div>
           </div>
         </section>
