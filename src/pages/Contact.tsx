@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -43,6 +44,7 @@ const Contact = () => {
 
   return (
     <main className="min-h-screen">
+      <Navigation />
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-background to-background/95">
         <div className="container mx-auto px-6">

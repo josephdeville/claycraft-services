@@ -29,6 +29,134 @@ export type Database = {
         }
         Relationships: []
       }
+      challenges: {
+        Row: {
+          id: string
+          title: string
+          description: string
+          prompt: string
+          hashtag: string
+          start_date: string
+          end_date: string
+          status: 'draft' | 'active' | 'voting' | 'completed'
+          prize_description: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          title: string
+          description: string
+          prompt: string
+          hashtag: string
+          start_date: string
+          end_date: string
+          status?: 'draft' | 'active' | 'voting' | 'completed'
+          prize_description?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          description?: string
+          prompt?: string
+          hashtag?: string
+          start_date?: string
+          end_date?: string
+          status?: 'draft' | 'active' | 'voting' | 'completed'
+          prize_description?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      submissions: {
+        Row: {
+          id: string
+          challenge_id: string
+          user_name: string
+          user_email: string
+          user_company: string | null
+          submission_type: 'video' | 'image' | 'text'
+          submission_url: string | null
+          submission_text: string | null
+          description: string
+          votes_count: number
+          featured: boolean
+          winner: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          challenge_id: string
+          user_name: string
+          user_email: string
+          user_company?: string | null
+          submission_type: 'video' | 'image' | 'text'
+          submission_url?: string | null
+          submission_text?: string | null
+          description: string
+          votes_count?: number
+          featured?: boolean
+          winner?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          challenge_id?: string
+          user_name?: string
+          user_email?: string
+          user_company?: string | null
+          submission_type?: 'video' | 'image' | 'text'
+          submission_url?: string | null
+          submission_text?: string | null
+          description?: string
+          votes_count?: number
+          featured?: boolean
+          winner?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "submissions_challenge_id_fkey"
+            columns: ["challenge_id"]
+            referencedRelation: "challenges"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      votes: {
+        Row: {
+          id: string
+          submission_id: string
+          voter_email: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          submission_id: string
+          voter_email: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          submission_id?: string
+          voter_email?: string
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "votes_submission_id_fkey"
+            columns: ["submission_id"]
+            referencedRelation: "submissions"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never
