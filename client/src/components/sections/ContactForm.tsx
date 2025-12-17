@@ -21,7 +21,7 @@ const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   company: z.string().min(2, "Company name is required"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().optional(),
+  phone: z.string().min(10, "Please enter a valid phone number"),
   currentLeadVolume: z.string().min(1, "Please select your current monthly lead volume"),
   biggestChallenge: z.string().min(10, "Please describe your biggest lead generation challenge"),
   preferredContact: z.string().min(1, "Please select your preferred contact method"),
@@ -257,7 +257,7 @@ const ContactForm = () => {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Phone</FormLabel>
+                          <FormLabel>Phone *</FormLabel>
                           <FormControl>
                             <Input placeholder="+1 (555) 123-4567" {...field} data-testid="input-phone" />
                           </FormControl>
