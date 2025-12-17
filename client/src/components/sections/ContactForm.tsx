@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -25,12 +25,25 @@ const contactSchema = z.object({
   currentLeadVolume: z.string().min(1, "Please select your current monthly lead volume"),
   biggestChallenge: z.string().min(10, "Please describe your biggest lead generation challenge"),
   preferredContact: z.string().min(1, "Please select your preferred contact method"),
+  turnstileToken: z.string().min(1, "Please complete the verification"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (selector: string, options: any) => void;
+      reset: () => void;
+      getResponse: () => string;
+      remove: () => void;
+    };
+  }
+}
+
 const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
   const { toast } = useToast();
   
   const form = useForm<ContactFormData>({
@@ -43,8 +56,33 @@ const ContactForm = () => {
       currentLeadVolume: "",
       biggestChallenge: "",
       preferredContact: "",
+      turnstileToken: "",
     },
   });
+
+  useEffect(() => {
+    const renderTurnstile = () => {
+      if (window.turnstile) {
+        window.turnstile.render('#turnstile-widget', {
+          sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY || '',
+          theme: 'light',
+          callback: (token: string) => {
+            setTurnstileToken(token);
+            form.setValue('turnstileToken', token);
+          }
+        });
+      }
+    };
+
+    const checkTurnstile = setInterval(() => {
+      if (window.turnstile) {
+        renderTurnstile();
+        clearInterval(checkTurnstile);
+      }
+    }, 100);
+
+    return () => clearInterval(checkTurnstile);
+  }, [form]);
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
@@ -298,6 +336,9 @@ const ContactForm = () => {
                         </FormItem>
                       )}
                     />
+
+                    {/* Turnstile Verification */}
+                    <div id="turnstile-widget" className="flex justify-center my-4" data-testid="turnstile-widget"></div>
 
                     <Button 
                       type="submit" 
